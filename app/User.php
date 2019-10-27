@@ -56,4 +56,5 @@ class User extends \TCG\Voyager\Models\User
     public function sendPasswordResetNotification($token){
         $this->notify(new PasswordResetNotification($token));
     }
+
 }
