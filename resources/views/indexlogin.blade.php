@@ -1,0 +1,7 @@
+@include('login.header')
+@include('login.navlogin')
+@include('login.neworder')
+@include('login.services')
+@include('login.howtoprint')
+@include('login.testimonials')
+@include('login.footer')

@@ -1,0 +1,7 @@
+@include('guest.header')
+@include('guest.loginandregister')
+@include('guest.navguest')
+@include('guest.services')
+@include('guest.howtoprint')
+@include('guest.testimonials')
+@include('guest.footer')

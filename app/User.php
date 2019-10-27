@@ -1,0 +1,59 @@
+<?php
+
+namespace App;
+
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
+use App\PrinterDetails;
+use App\Notifications\PasswordResetNotification;
+
+class User extends \TCG\Voyager\Models\User
+{
+    use Notifiable;
+    use HasApiTokens, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password','role_id','user_id','image','avatar','phone_number','area' , 'device_token'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+
+    public function getPrinter(){
+
+        return $this->hasMany(PrinterDetails ::class);
+
+    }
+
+    public function sendPasswordResetNotification($token){
+        $this->notify(new PasswordResetNotification($token));
+    }
+}
