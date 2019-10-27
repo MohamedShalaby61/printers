@@ -81,7 +81,7 @@
                        <div id="mySidenav" class="sidenav">
                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                            <div class="text-center profile">
-                                <img src="imgs/128.jpg" class="" alt="">
+                                <img src="{{url('/front/imgs/128.jpg')}}" class="" alt="">
                                 <h6>معاذ محسن</h6>
                                 <a href="editProfile.html" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
                            </div>
@@ -132,7 +132,7 @@
                     <div class="nav flex-column nav-pills links-profile" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fas fa-user"></i> حسابي</a>
                       <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-cog"></i> اعداداتي</a>
-                      <a class="nav-link" href="index.html"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+                      <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
                     </div>
                   </div>
                   <div class="col-sm-9">
@@ -141,30 +141,46 @@
                             <h5>حسابي</h5>
                             <div class="all-content">
                                 <div class="text-center profile">
-                                    <img src="imgs/128.jpg" class="" alt="">
-                                    <a href="#" class="edit-profile"></a>
-                                    <input type="file" id="file" />
+                                    <img src="{{url('/front/imgs/128.jpg')}}" id="blah" class="" alt="image">
+                                    <!-- <a href="#" class="edit-profile"></a> -->
+                                    <input type="file" id="file"/>
                                     <label for="file" class="btn-2"><i class="far fa-edit"></i> تعديل الصورة الشخصية</label>
                                </div>
-                               <form>
+                               @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                @if(Session::has('message'))
+                                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}" style="font-size: 12px;">{{ Session::get('message') }}</p>
+                                @endif
+
+                               <form action="{{route('updateProfile')}}" method="POST">
+                                @csrf
+                                @method('PUT')
                                   <div class="form-row">
                                     <div class="form-group col-md-6">
                                       <label for="inputEmail4">الأسم</label>
-                                      <input type="email" class="form-control" id="inputEmail4" placeholder="الأسم">
+                                      <input type="text" name="name" class="form-control" id="inputEmail4" value="{{$userData->name}}">
                                     </div>
                                     <div class="form-group col-md-6">
                                       <label for="inputPassword4">الرقم السري</label>
-                                      <input type="password" class="form-control" id="inputPassword4" placeholder="الرقم السري">
+                                      <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="الرقم السري">
                                     </div>
                                   </div>
                                   <div class="form-row">
                                     <div class="form-group col-md-6">
                                       <label for="inputEmail4">البريد الألكتروني</label>
-                                      <input type="email" class="form-control" id="inputEmail4" placeholder="البريد الألكتروني">
+                                      <input type="email" name="email" class="form-control" id="inputEmail4" value="{{$userData->email}}">
                                     </div>
                                     <div class="form-group col-md-6">
                                       <label for="inputPassword4">رقم الهاتف</label>
-                                      <input type="text" class="form-control" id="inputPassword4" placeholder="رقم الهاتف">
+                                      <input type="text" name="phone_number" class="form-control" id="inputPassword4" value="{{$userData->phone_number}}">
                                     </div>
                                   </div>
 <!--
@@ -188,29 +204,17 @@
                                       <label for="formGroupExampleInput">اختر البلد</label>
                                       <select class="custom-select" id="inputGroupSelect01">
                                         <option selected>اختر البلد</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        @foreach( $countries as $country)
+                                          <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                        @endforeach
                                       </select>
                                    </div>
                                   <div class="form-group col-md-6">
                                       <label for="formGroupExampleInput">اختر اللغه</label>
                                       <select class="custom-select" id="inputGroupSelect01">
                                         <option selected>اختر اللغه</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                      </select>
-                                   </div>
-                                  <div class="form-group col-md-6">
-                                      <label for="formGroupExampleInput">قم بتقييمنا</label>
-                                      <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>قم بتقييمنا</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
+                                        <option value="1">العربية</option>
+                                        <option value="2">الإنجليزية</option>
                                       </select>
                                    </div>
                                   <div class="form-group col-md-6">
@@ -227,9 +231,27 @@
                   </div>
                 </div>
             </div>
-        </section>
-                    <!-- END control -->
-                    <!-- END orders -->
-      
+        </section>       
+      @push('js')
+          <script>
+
+                 function readURL(input) {
+                  if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                      $('#blah').attr('src', e.target.result);
+                    }
+                    
+                    reader.readAsDataURL(input.files[0]);
+                  }
+                }
+
+                $("#file").change(function() {
+                  readURL(this);
+                });
+
+        </script>
+      @endpush
         
 @include('login.footer')

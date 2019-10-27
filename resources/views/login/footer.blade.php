@@ -94,7 +94,7 @@
                     <!-- end footer -->
 
       
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="{{url('/front/js/jquery-3.3.1.min.js')}}" type="text/javascript"></script>   
         <script src="{{url('/front/js/popper.js')}}" type="text/javascript"></script>
         <script src="{{url('/front/js/bootstrap.min.js')}}" type="text/javascript"></script>
@@ -119,5 +119,6 @@
             
         </script>
         @stack('js')
+        
     </body>
 </html>

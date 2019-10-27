@@ -23,7 +23,8 @@ Route::get('/logout', function(){
 });
 Route::get('/','HomeController@index')->name('index_guest');
 Route::get('/index', 'UserController@index')->name('index_login');
-Route::get('/editProfile', 'UserController@editProfile');
+Route::get('/editProfile', 'UserController@editProfile')->name('editProfile');
+Route::put('/updateProfile', 'UserController@updateProfile')->name('updateProfile');
 Route::get('/offers', 'OffersController@index');
 Route::get('/myOrders', 'MyOrdersController@user_orders');
 Route::get('/create_order', 'MyOrdersController@create_order')->name('order.create');
