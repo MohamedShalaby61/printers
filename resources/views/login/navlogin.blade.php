@@ -28,7 +28,7 @@
                           <a href="#services">خدماتنا</a>
                           <a href="#how_print">كيفية الطباعة</a>
                           <a href="#testmonials">أراء العملاء</a>
-                          <a href="/myOrders">طلباتي</a>
+                          <a href="{{ route('order_user') }}">طلباتي</a>
                           <a href="/offers">العروض</a>
                           <a href="#contact">تواصل معنا</a> 
                           <a href="#" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">

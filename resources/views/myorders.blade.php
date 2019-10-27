@@ -1,5 +1,6 @@
 @include('login.header')
 @include('login.neworder')
+
         <nav class="navbar navbar-expand-lg navbar-light nav-order">
             <div class="container">
               <a class="navbar-brand" href="index.html"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
@@ -112,16 +113,6 @@
             </div>
         </nav>
                     <!-- END navbar -->
-<!--
-        <nav aria-label="breadcrumb" class="text-center bg-breadcrumb">
-            <h4>تعديل الملغ الشخصي</h4>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html" class="f-color">الرئيسية</a></li>
-            <li class="breadcrumb-item active" aria-current="page">لوحة التحكم</li>
-          </ol>
-        </nav>
--->
-        
         
         <section class="sec-order pd-norm-sec">
             <div class="container">
@@ -137,260 +128,113 @@
                   <div class="tab-pane fade show active complete-order orders" id="orders" role="tabpanel" aria-labelledby="home-tab">
                           <h5 class="mb-30">طلبات  تحت التنفيذ</h5>
                           <div class="row">
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                               <div class="card">
-                                    <h6 class="bg-download">نوع الطلب : 
-                                        <span>تنسيق ابحاث 
-<!--                                            <a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>-->
+                              @foreach($onProgressOrders as $order)
+                                  <div class="col-lg-4 col-sm-6 col-xs-12">
+                                      <div class="card">
+                                          <h6 class="bg-download">نوع الطلب :
+                                              <span>{{ $order->order_type->type }}
+                                                  <!--                                            <a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>-->
                                         </span>
-                                    </h6>
-                                    <h6>رقم الطلب : 
-                                        <span>02000</span>
-                                    </h6>
-                                    <h6>تاريخ الطلب : 
-                                        <span>2 اكتوبر 2019</span>
-                                    </h6>
-                                    <h6>حالة الطلب : 
-                                       <span class="status quick">مستعجل </span><span class="status completes">تم الأستقبال </span>
-                                    </h6>
-                                    <h6>عدد الاوراق : 
-                                        <span>تحت المراجعة</span>
-                                    </h6>
-                                   <h6>تاريخ الاستلام : 
-                                        <span>تحت المراجعة</span>
-                                    </h6>
-                                   <h6>مركز الطباعة : 
-                                        <span>درة المطابع</span>
-                                    </h6>
-                                   <div class="line mb-15"></div>
-                                   <div class="row">
-                                       <div class="col">
-                                            <div class="status-payment">
-                                               <a href="#" class="hvr-icon-down cancel-order hvr-buzz"><i class="fas fa-trash-alt"></i> الغاء الطلب  </a>
-                                            </div>
-                                       </div>
-                                       <div class="col">
-                                            <div class="cost">
-                                                <h5>القيمة</h5>
-                                                <p>تحت المراجعة</p>
-                                            </div>
-                                       </div>
-                                   </div>
-<!--                                   <button type="button" class="btn btn-primary true-pay">تم الدفع</button>-->
-                               </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6 col-xs-12">
-                                   <div class="card">
-                                    <h6 class="bg-download">نوع الطلب : 
-                                        <span>تنسيق ابحاث
-<!--                                            <a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>-->
-                                        </span>
-                                    </h6>
-                                    <h6>رقم الطلب : 
-                                        <span>02000</span>
-                                    </h6>
-                                    <h6>تاريخ الطلب : 
-                                        <span>2 اكتوبر 2019</span>
-                                    </h6>
-                                    <h6>حالة الطلب : 
-                                       <span class="status normal">عادي </span><span class="status completes">تم الأستقبال </span>
-                                    </h6>
-                                    <h6>عدد الاوراق : 
-                                        <span>تحت المراجعة</span>
-                                    </h6>
-                                   <h6>تاريخ الاستلام المتوقع : 
-                                        <span>تحت المراجعة</span>
-                                    </h6>
-                                   <h6>مركز الطباعة : 
-                                        <span>درة المطابع</span>
-                                    </h6>
-                                   <div class="line mb-15"></div>
-                                   <div class="row">
-                                       <div class="col">
-                                            <div class="status-payment">
-                                               <a href="#" class="hvr-icon-down cancel-order hvr-buzz"><i class="fas fa-trash-alt"></i> الغاء الطلب  </a>
-                                            </div>
-                                       </div>
-                                       <div class="col">
-                                            <div class="cost">
-                                                <h5>القيمة</h5>
-                                                <p>تحت المراجعة</p>
-                                            </div>
-                                       </div>
-                                   </div>
-<!--                                   <button type="button" class="btn btn-primary false-pay hvr-float"> أكمال الدفع</button>-->
-                               </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                       <div class="card">
-                                    <h6 class="bg-download">نوع الطلب : 
-                                        <span>تنسيق ابحاث
-<!--                                            <a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>-->
-                                        </span>
-                                    </h6>
-                                    <h6>رقم الطلب : 
-                                        <span>02000</span>
-                                    </h6>
-                                    <h6>تاريخ الطلب : 
-                                        <span>2 اكتوبر 2019</span>
-                                    </h6>
-                                    <h6>حالة الطلب : 
-                                       <span class="status normal">عادي </span><span class="status completes">تم الأستقبال </span>
-                                    </h6>
-                                    <h6>عدد الاوراق : 
-                                        <span>تحت المراجعة</span>
-                                    </h6>
-                                   <h6>تاريخ الاستلام المتوقع : 
-                                        <span>تحت المراجعة</span>
-                                    </h6>
-                                   <h6>مركز الطباعة : 
-                                        <span>درة المطابع</span>
-                                    </h6>
-                                   <div class="line mb-15"></div>
-                                   <div class="row">
-                                       <div class="col">
-                                            <div class="status-payment">
-                                               <a href="#" class="hvr-icon-down cancel-order hvr-buzz"><i class="fas fa-trash-alt"></i> الغاء الطلب  </a>
-                                            </div>
-                                       </div>
-                                       <div class="col">
-                                            <div class="cost">
-                                                <h5>القيمة</h5>
-                                                <p>تحت المراجعة</p>
-                                            </div>
-                                       </div>
-                                   </div>
-<!--                                   <button type="button" class="btn btn-primary false-pay hvr-float"> أكمال الدفع</button>-->
-                               </div>
-                            </div>
+                                          </h6>
+                                          <h6>رقم الطلب :
+                                              <span>{{ $order->id }}</span>
+                                          </h6>
+                                          <h6>تاريخ الطلب :
+                                              <span>{{ $order->order_date }}</span>
+                                          </h6>
+                                          <h6>حالة الطلب :
+                                              <span class="status quick">{{ $order->order_status->status }} </span><span class="status completes">{{ $order->order_type->type }} </span>
+                                          </h6>
+                                          <h6>عدد الاوراق :
+                                              <span>{{ $order->pages_number }}</span>
+                                          </h6>
+                                          <h6>تاريخ الاستلام :
+                                              <span>{{ $order->deliveryDate }}</span>
+                                          </h6>
+                                          <h6>مركز الطباعة :
+                                              <span>{{ $order->printer_details->name }}</span>
+                                          </h6>
+                                          <div class="line mb-15"></div>
+                                          <div class="row">
+                                              <div class="col">
+                                                  <div class="status-payment">
+                                                      <a href="#" class="hvr-icon-down cancel-order hvr-buzz"><i class="fas fa-trash-alt"></i> الغاء الطلب  </a>
+                                                  </div>
+                                              </div>
+                                              <div class="col">
+                                                  <div class="cost">
+                                                      <h5>القيمة</h5>
+                                                      @if(is_numeric($order->payment->cost))
+                                                      <p>{{ $order->payment->cost }} ريال سعودي</p>
+                                                      @else
+                                                      <p>{{ $order->payment->cost }}</p>
+                                                      @endif
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!--                                   <button type="button" class="btn btn-primary true-pay">تم الدفع</button>-->
+                                      </div>
+                                  </div>
+                              @endforeach
+
                           </div>
                   </div>
                   <div class="tab-pane fade complete-order" id="complete_order" role="tabpanel" aria-labelledby="profile-tab">
                       <h5 class="mb-30">طلبات مكتملة</h5>
                       <div class="row">
-                        <div class="col-md">
-                           <div class="card">
-                                <h6 class="bg-download">نوع الطلب : 
-                                    <span>كتابة <a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
+
+                          @foreach($completedOrders as $order)
+                              <div class="col-md">
+                                  <div class="card">
+                                      <h6 class="bg-download">نوع الطلب :
+                                          <span>{{ $order->order_status->status }}
+                                              @if($order->payment->payment_status == 1)
+                                                  <a href="{{ $order->file }}" target="_blank" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
+                                              @else
+                                                  <a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
+                                              @endif
                                     </span>
-                                </h6>
-                                <h6>رقم الطلب : 
-                                    <span>02000</span>
-                                </h6>
-                                <h6>تاريخ الطلب : 
-                                    <span>2 اكتوبر 2019</span>
-                                </h6>
-                                <h6>حالة الطلب : 
-                                   <span class="status quick">مستعجل </span><span class="status completes">مكتمل </span>
-                                </h6>
-                                <h6>عدد الاوراق : 
-                                    <span>11</span>
-                                </h6>
-                               <h6>تاريخ الاستلام : 
-                                    <span>3 اكتوبر</span>
-                                </h6>
-                               <h6>مركز الطباعة : 
-                                    <span>درة المطابع</span>
-                                </h6>
-                               <div class="line mb-15"></div>
-                               <div class="row">
-                                   <div class="col">
-                                        <div class="status-payment">
-                                           <a href="#" class="hvr-icon-down"><i class="fas fa-check-circle true"></i> تم الدفع</a>
-                                        </div>
-                                   </div>
-                                   <div class="col">
-                                        <div class="cost">
-                                            <h5>القيمة</h5>
-                                            <p>300 ريال سعودي</p>
-                                        </div>
-                                   </div>
-                               </div>
-                               <button type="button" class="btn btn-primary true-pay hvr-float" data-toggle="modal" data-target="#details_order">تفاصيل الطلب والتعديلات</button>
-                           </div>
-                        </div>
-                        <div class="col-md">
-                               <div class="card">
-                                <h6 class="bg-download">نوع الطلب : 
-                                    <span>تنسيق ابحاث<a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
-                                    </span>
-                                </h6>
-                                <h6>رقم الطلب : 
-                                    <span>02000</span>
-                                </h6>
-                                <h6>تاريخ الطلب : 
-                                    <span>2 اكتوبر 2019</span>
-                                </h6>
-                                <h6>حالة الطلب : 
-                                   <span class="status normal">عادي </span><span class="status completes">قيد التنفيذ </span>
-                                </h6>
-                                <h6>عدد الاوراق : 
-                                    <span>5</span>
-                                </h6>
-                               <h6>تاريخ الاستلام المتوقع : 
-                                    <span>غدا</span>
-                                </h6>
-                               <h6>مركز الطباعة : 
-                                    <span>درة المطابع</span>
-                                </h6>
-                               <div class="line mb-15"></div>
-                               <div class="row">
-                                   <div class="col">
-                                        <div class="status-payment">
-                                           <a href="#" class="hvr-icon-down"><i class="fas fa-check-circle false"></i> في انتظار الدفع</a>
-                                        </div>
-                                   </div>
-                                   <div class="col">
-                                        <div class="cost">
-                                            <h5>القيمة</h5>
-                                            <p>300 ريال سعودي</p>
-                                        </div>
-                                   </div>
-                               </div>
-                               <button type="button" class="btn btn-primary false-pay hvr-float"> أكمال الدفع</button>
-                           </div>
-                        </div>
-                        <div class="col-md">
-                                   <div class="card">
-                                <h6 class="bg-download">نوع الطلب : 
-                                    <span>تنسيق ابحاث<a href="#" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
-                                    </span>
-                                </h6>
-                                <h6>رقم الطلب : 
-                                    <span>02000</span>
-                                </h6>
-                                <h6>تاريخ الطلب : 
-                                    <span>2 اكتوبر 2019</span>
-                                </h6>
-                                <h6>حالة الطلب : 
-                                   <span class="status normal">عادي </span><span class="status editing">معدل </span>
-                                </h6>
-                                <h6>عدد الاوراق : 
-                                    <span>5</span>
-                                </h6>
-                               <h6>تاريخ الاستلام المتوقع : 
-                                    <span>غدا</span>
-                                </h6>
-                               <h6>مركز الطباعة : 
-                                    <span>درة المطابع</span>
-                                </h6>
-                               <div class="line mb-15"></div>
-                               <div class="row">
-                                   <div class="col">
-                                        <div class="status-payment">
-                                           <a href="#" class="hvr-icon-down"><i class="fas fa-check-circle false"></i> في انتظار الدفع</a>
-                                        </div>
-                                   </div>
-                                   <div class="col">
-                                        <div class="cost">
-                                            <h5>القيمة</h5>
-                                            <p>300 ريال سعودي</p>
-                                        </div>
-                                   </div>
-                               </div>
-                               <button type="button" class="btn btn-primary false-pay hvr-float"> أكمال الدفع</button>
-                           </div>
-                        </div>
+                                      </h6>
+                                      <h6>رقم الطلب :
+                                          <span>{{ $order->id }}</span>
+                                      </h6>
+                                      <h6>تاريخ الطلب :
+                                          <span>{{ $order->order_date }}</span>
+                                      </h6>
+                                      <h6>حالة الطلب :
+                                          <span class="status quick">{{ $order->order_type->type }} </span><span class="status completes">{{ $order->order_status->status }} </span>
+                                      </h6>
+                                      <h6>عدد الاوراق :
+                                          <span>{{ $order->pages_number }}</span>
+                                      </h6>
+                                      <h6>تاريخ الاستلام :
+                                          <span>{{ $order->deliveryDate }}</span>
+                                      </h6>
+                                      <h6>مركز الطباعة :
+                                          <span>{{ $order->printer_details->name }}</span>
+                                      </h6>
+                                      <div class="line mb-15"></div>
+                                      <div class="row">
+                                          <div class="col">
+                                              <div class="status-payment">
+                                                  <a href="#" class="hvr-icon-down"><i class="fas fa-check-circle true"></i>{{ $order->payment->payment_status == 0 ? 'في انتظار الدفع' : 'تم الدفع' }}</a>
+                                              </div>
+                                          </div>
+                                          <div class="col">
+                                              <div class="cost">
+                                                  <h5>القيمة</h5>
+                                                  @if(is_numeric($order->payment->cost))
+                                                  <p>{{ $order->payment->cost }} ريال سعودي</p>
+                                                  @else
+                                                  <p>{{ $order->payment->cost }}</p>
+                                                  @endif
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <button type="button" class="btn btn-primary true-pay hvr-float" data-toggle="modal" data-target="#details_order">تفاصيل الطلب والتعديلات</button>
+                                  </div>
+                              </div>
+                          @endforeach
                       </div>
                   </div>
                 </div>
