@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\CompletedFile;
+use App\Notifications;
 use App\payment;
+use App\PrinterDetails;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\MyOrders;
 use App\FontTypes;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Modules\Offer\Entities\Offer;
 use Validator;
 
 class MyOrdersController extends Controller
@@ -33,7 +37,51 @@ class MyOrdersController extends Controller
          //$array = json_decode(json_encode($data), true);
          
          //dd($data);
-          MyOrders::create($request->all() + ['user_id' => auth()->user()->id ]);
+
+          $setting = DB::table('setting')->first();
+          $is_available= $setting->is_available;
+          $user = User::find(53);
+
+          if ($is_available == 1)
+          {
+
+              $adminPrinters = $user->getPrinter->where('isActive',1);
+              //dd($adminPrinters);
+              $sortedPrinter = $adminPrinters->sortBy(function($count){
+                  return $count->orderCount;
+              });
+              //dd($sortedPrinter);
+              $selectedPrinterId = $sortedPrinter->first()->id;
+              //dd($selectedPrinterId);
+              $counter =  $sortedPrinter->first()->orderCount;
+              $final = $sortedPrinter->first();
+              $final->orderCount = $counter+1;
+              $final->save();
+
+
+          }
+          else
+          {
+              $otherPrinters = PrinterDetails::where('isActive',1)->where('user_id','!=',$user->id)->get();
+
+              $sortedPrinter = $otherPrinters->sortBy(function($count){
+                  return $count->orderCount;
+              });
+              $selectedPrinterId = $sortedPrinter->first()->id;
+              //dd($selectedPrinterId);
+              $counter =  $sortedPrinter->first()->orderCount;
+              $final = $sortedPrinter->first();
+              $final->orderCount = $counter+1;
+              $final->save();
+
+
+          }
+
+          $order = MyOrders::create($request->all()+['printer_id'=> $selectedPrinterId,'user_id'=> auth()->user()->id ]);
+          $payment = payment::create([
+              'order_id'=>$order->id
+          ]);
+
           return response()->json(['errors' => null]);
       }
 
@@ -144,13 +192,101 @@ class MyOrdersController extends Controller
 
         return response()->json(['On_Progress' =>$onProgressOrders]);
     }
-    
+
+    public function offers()
+    {
+        $fonts = FontTypes::all();
+        $offers = Offer::all();
+
+        return view('offers',compact('fonts','offers'));
+    }
+
+    public function delete_orders(Request $request)
+    {
+        $order = MyOrders::find($request->id);
+        $order->delete();
+        return response()->json();
+    }
+
+    public function edit_order_front(Request $request)
+    {
+        $orderid = $request->id;
+        $updatenotes = $request->update_notes;
+
+        $order = MyOrders::find($orderid);
+
+
+        $orderCount = $order->order_count + 1;
 
 
 
 
+        if($orderCount >= 3){
+            $order->update(['order_status_id' => '8' , 'update_count' =>$orderCount ,'update_notes'=> $updatenotes]);
+            if ($order->order_status_id == 2) {
+                Notifications::create([
+                    'title_ar' => 'اكتمل الطلب حمل الملف الان',
+                    'data_ar' => $order->id . ' - ' . $order->service_type->id == 1 ? 'كتابة فقط' : 'تنسيق وكتابة ابحاث',
+                    'title_en' => 'complete you can Download the file now',
+                    'data_en' => $order->id . ' - ' . $order->service_type->id == 1 ? 'writing only' : 'write and make research',
+                    'order_id'=> $order->id,
+                    'user_id' => $order->user_id
+                ]);
+            }elseif ($order->order_status_id == 6) {
+                Notifications::create([
+                    'title_ar' => 'الطلب تحت التعديل',
+                    'data_ar' => $order->id . ' - ' . $order->service_type->id == 1 ? 'كتابة فقط' : 'تنسيق وكتابة ابحاث',
+                    'title_en' => 'The application is under editing',
+                    'data_en' => $order->id . ' - ' . $order->service_type->id == 1 ? 'writing only' : 'write and make research',
+                    'order_id'=> $order->id,
+                    'user_id' => $order->user_id
+                ]);
+            }elseif($order->order_status_id == 8){
+                Notifications::create([
+                    'title_ar' => 'الطلب تحت التعديل',
+                    'data_ar' => $order->id . ' - ' . $order->service_type->id == 1 ? 'كتابة فقط' : 'تنسيق وكتابة ابحاث',
+                    'title_en' => 'The application is under editing',
+                    'data_en' => $order->id . ' - ' . $order->service_type->id == 1 ? 'writing only' : 'write and make research',
+                    'order_id'=> $order->id,
+                    'user_id' => $order->user_id
+                ]);
+            }
 
+            return response()->json(['message' => 'you will get notified soon']);
+        }else{
+            $order->update(['order_status_id' =>'6' , 'update_count' =>$orderCount , 'modified_cost' =>'0' ,'update_notes'=> $updatenotes ]);
+            if ($order->order_status_id == 2) {
+                Notifications::create([
+                    'title_ar' => 'اكتمل الطلب حمل الملف الان',
+                    'data_ar' => $order->id . ' - ' . $order->service_type->id == 1 ? 'كتابة فقط' : 'تنسيق وكتابة ابحاث',
+                    'title_en' => 'complete you can Download the file now',
+                    'data_en' => $order->id . ' - ' . $order->service_type->id == 1 ? 'writing only' : 'write and make research',
+                    'order_id'=> $order->id,
+                    'user_id' => $order->user_id
+                ]);
+            }elseif ($order->order_status_id == 6) {
+                Notifications::create([
+                    'title_ar' => 'الطلب تحت التعديل',
+                    'data_ar' => $order->id . ' - ' . $order->service_type->id == 1 ? 'كتابة فقط' : 'تنسيق وكتابة ابحاث',
+                    'title_en' => 'The application is under editing',
+                    'data_en' => $order->id . ' - ' . $order->service_type->id == 1 ? 'writing only' : 'write and make research',
+                    'order_id'=> $order->id,
+                    'user_id' => $order->user_id
+                ]);
+            }elseif($order->order_status_id == 8){
+                Notifications::create([
+                    'title_ar' => 'الطلب تحت التعديل',
+                    'data_ar' => $order->id . ' - ' . $order->service_type->id == 1 ? 'كتابة فقط' : 'تنسيق وكتابة ابحاث',
+                    'title_en' => 'The application is under editing',
+                    'data_en' => $order->id . ' - ' . $order->service_type->id == 1 ? 'writing only' : 'write and make research',
+                    'order_id'=> $order->id,
+                    'user_id' => $order->user_id
+                ]);
+            }
 
+            return response()->json(['message' => 'you will get notified soon']);
 
+        }
+    }
 
 }

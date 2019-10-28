@@ -1,6 +1,6 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-              <a class="navbar-brand" href="index.html"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
+              <a class="navbar-brand" href="{{ url('/index') }}"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
               <div class="" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
@@ -10,7 +10,7 @@
 
                   </li>
                   <li class="nav-item active">
-                    <a href="/logout" class="nav-link btn btn-primary hvr-shutter-out-horizontal hvr-icon-pulse-grow">
+                    <a href="{{ url('/logout') }}" class="nav-link btn btn-primary hvr-shutter-out-horizontal hvr-icon-pulse-grow">
 					تسجيل الخروج<i class="fas fa-sign-in-alt hvr-icon"></i>
 				    </a>
                   </li>
@@ -21,16 +21,16 @@
                            <div class="text-center profile">
                                 <img src="{{url('/front/imgs/128.jpg')}}" class="" alt="">
                                 <h6>معاذ محسن</h6>
-                                <a href="/editProfile" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
+                                <a href="{{ url('/editProfile') }}" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
                            </div>
-                          <a href="#home">الرئيسية</a>
-                          <a href="#about">من نحن</a>
-                          <a href="#services">خدماتنا</a>
-                          <a href="#how_print">كيفية الطباعة</a>
-                          <a href="#testmonials">أراء العملاء</a>
+                          <a href="{{ url('/index#home') }}">الرئيسية</a>
+                          <a href="{{ url('/index#about') }}">من نحن</a>
+                          <a href="{{ url('/index#services') }}">خدماتنا</a>
+                          <a href="{{ url('/index#how_print') }}">كيفية الطباعة</a>
+                          <a href="{{ url('/index#testmonials') }}">أراء العملاء</a>
                           <a href="{{ route('order_user') }}">طلباتي</a>
-                          <a href="/offers">العروض</a>
-                          <a href="#contact">تواصل معنا</a> 
+                          <a href="{{ route('offers_index') }}">العروض</a>
+                          <a href="{{ url('/index#contact') }}">تواصل معنا</a>
                           <a href="#" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">
                             انشاء طلب<i class="fas fa-print hvr-icon"></i>
                           </a>

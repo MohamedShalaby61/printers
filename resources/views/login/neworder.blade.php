@@ -65,7 +65,7 @@
                             <h6 class="mb-10">ملاحظات اضافة</h6>
                             <textarea class="btn-block" name="additional_details" required="required" value="{{old('additional_details')}}"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-submit btn-block">ارسال الطلب</button>
+                        <button class="btn btn-primary btn-submit btn-block">ارسال الطلب</button>
                     </form>                  
                   
               </div>
@@ -92,7 +92,7 @@
             //alert(file22);
 
             $.ajax({
-                url: "/store_order",
+                url: "{{ url('/store_order') }}",
                 type:"post",
                 data: {  _token:_token22, 
                          file:file22,
@@ -121,7 +121,20 @@
                       $('.validate_class').removeAttr('hidden').append(errorString);
                   
                     }else{
-                      alert('تم تسجيل طلبك بنجاح');
+                      // alert('تم تسجيل طلبك بنجاح');
+                      Swal.fire({
+                          title: 'تم ارسال طلبك بنجاح',
+                          type: 'success',
+                          showConfirmButton: false,
+                          timer:1000
+                      });
+
+                      $('#newPrint').modal('hide');
+
+                      setTimeout(function(){
+                          location.reload(true);
+                      }, 1000);
+
                     }
                   
 

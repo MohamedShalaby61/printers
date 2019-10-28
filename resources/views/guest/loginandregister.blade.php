@@ -46,7 +46,7 @@
             <!-- register --> 
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register_create') }}">
                       @csrf
                       <h5 class="form-group">حساب جديد</h5>
                       <div class="form-group">
@@ -82,7 +82,7 @@
                           @enderror
                       </div>
                       <div class="form-group">
-                          <input type="text" class="form-control @error('area') is-invalid @enderror" id="inputAddress" placeholder="رقم الجوال" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                          <input type="text" class="form-control @error('phone') is-invalid @enderror" id="inputAddress" placeholder="رقم الجوال" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
                           @error('phone')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>

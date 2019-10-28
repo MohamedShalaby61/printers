@@ -1115,12 +1115,14 @@ label.btn-2 i{
     border-top-right-radius: .25rem;
     text-align: center;
     width: 160px;
+    font-size: 15px;
     border-top-left-radius: .25rem;
 }
 .sec-order .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     background: #4E9BD4;
     color: #fff;
      border-radius: 0px;
+    font-size: 15px;
 }
 .sec-order .complete-order .card{
     border: none;
@@ -1142,7 +1144,7 @@ label.btn-2 i{
      margin-right: 7px;
 }
 .sec-order .complete-order .card span a{
-    font-size: 11px;
+    font-size: 10px;
     margin-right: 5px;
     margin-top: -4px !important;
 }

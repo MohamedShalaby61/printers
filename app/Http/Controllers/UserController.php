@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\FontTypes;
 use App\Countries;
@@ -42,6 +43,24 @@ class UserController extends Controller
         Session::flash('alert-class', 'alert-success');
     	return redirect()->back();
 
+    }
+
+    public function register_create(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'phone' => 'required',
+            'area' => 'required',
+        ]);
+
+        $data['password'] = bcrypt($request->password);
+        $user = User::create($data + ['role_id' => 4]);
+
+        auth()->loginUsingId($user->id);
+
+        return redirect()->route('index_login');
     }
 
     
