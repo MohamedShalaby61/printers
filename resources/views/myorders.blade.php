@@ -69,7 +69,14 @@
                               @endforeach
                           </div>
                            @else
-                            <h2 style="font-family: 'Droid Arabic Kufi',bold, serif">لا يوجد لديك طلبات جديدة</h2>
+                                <div class="missing text-center pd-norm-sec">
+                                    <div class="container">
+                                        <i class="far fa-file-excel"></i>
+                                        <h5>لا توجد طلبات</h5>
+                                        <p>قم بأنشاء طلبات جديدة لتسمتع بخدمتنا</p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPrint">انشاء طلب</button>
+                                    </div>
+                                </div>
                             @endif
                   </div>
 
@@ -136,7 +143,12 @@
                                               data-printer="{{ $order->printer_details->name }}"
                                               class="btn btn-primary true-pay hvr-float editBtnComplete" data-toggle="modal" data-target="#details_order">تفاصيل الطلب والتعديلات</button>
                                       @else
-                                      <button type="button" class="btn btn-primary false-pay hvr-float"> أكمال الدفع</button>
+                                      <button type="button"
+                                              data-amount="{{ $order->payment->cost }}"
+                                              data-currency="SAR"
+                                              data-user_id="{{ auth()->user()->id }}"
+                                              data-user_email="{{ auth()->user()->email }}"
+                                              class="btn btn-primary false-pay hvr-float btn_paid"> أكمال الدفع</button>
                                       @endif
                                   </div>
                               </div>
@@ -159,9 +171,25 @@
 
             </div>
 
+            <div class="modal" id="payment_modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">اكمال عملية الدفع</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ route('back_return') }}" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <!-- end modal show -->
 @include('login.footer')
-
+<script class="src_btn" src=""></script>
     <script>
         $('.deleteProgress').on('click',function (e) {
             e.preventDefault();
@@ -342,5 +370,27 @@
 
             return false;
         });
+
+        $('.btn_paid').on('click',function (e) {
+            e.preventDefault();
+            //alert('dasda');
+            var amount = $(this).data('amount');
+            var currency = $(this).data('currency');
+            var user_id = $(this).data('user_id');
+            var user_email = $(this).data('user_email');
+
+            $.ajax({
+                url : '{{ url('payment') }}',
+                method: 'GET',
+                data:{amount:amount,currency:currency,user_id:user_id,user_email:user_email},
+                success : function (data) {
+                    // alert(data.id);
+                    $('#payment_modal').modal('show');
+                    $('.src_btn').attr('src','https://test.oppwa.com/v1/paymentWidgets.js?checkoutId='+data.id);
+
+                }
+            });
+        });
+
 
     </script>

@@ -33,11 +33,6 @@ class MyOrdersController extends Controller
           return response()->json(['errors' => $data->errors()->getMessages()]);
       }else{
 
-         //$data = (array) $data;
-         //$array = json_decode(json_encode($data), true);
-         
-         //dd($data);
-
           $setting = DB::table('setting')->first();
           $is_available= $setting->is_available;
           $user = User::find(53);

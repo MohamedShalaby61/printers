@@ -33,8 +33,15 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('register_create','UserController@register_create')->name('register_create');
     Route::post('delete_orders','MyOrdersController@delete_orders')->name('delete_orders');
     Route::post('edit_order_front','MyOrdersController@edit_order_front')->name('edit_order_front');
+    Route::get('payment','UserController@payment');
+    Route::get('paymentstatus','UserController@paymentstatus');
+    Route::get('payment/form/{id}','UserController@payment_form')->name('payment_form');
 });
-
+    Route::get('redirec/back',function (){
+        return redirect()->back();
+    })->name('back_return');
 Route::group(['middleware'=>'guest'],function (){
     Route::get('/','HomeController@index')->name('index_guest');
+    Route::post('login_ajax','UserController@login_ajax')->name('login_ajax');
+    Route::post('register_ajax','UserController@register_ajax')->name('register_ajax');
 });

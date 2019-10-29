@@ -103,6 +103,8 @@
         <script src="{{url('/front/js/jquery.rateyo.js')}}" type="text/javascript"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="{{url('/front/js/code.js')}}" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
         <script>
             AOS.init();
             new WOW().init();
@@ -117,6 +119,82 @@
               })
             });
             
+        </script>
+        <script>
+            $(document).on('click','#button_login',function (e) {
+                e.preventDefault();
+                var email = $('#email_login').val();
+                var password = $('#password_login').val();
+                var _token = '{{ csrf_token() }}';
+                var rememberme = $('#rememberme_login').val();
+                var agree = $('#agree_police').val();
+
+                $.ajax({
+                    url:'{{ route('login') }}',
+                    method:'POST',
+                    data : {_token:_token,email:email,password:password,rememberme:rememberme,agree:agree},
+                    success : function (data) {
+                        if (data.errors == null) {
+                            Swal.fire({
+                                title: 'رائع جاري تسجيل الدخول',
+                                type: 'success',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            window.location.href = '{{ route('index_login') }}';
+                        }
+                    },
+                    error:function () {
+
+                        Swal.fire({
+                            title: 'البريد الالكتروني او كلمة المرور غير صحيحة',
+                            type: 'error',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                });
+            });
+
+            $(document).on('click','#button_register',function (e) {
+                e.preventDefault();
+                var name = $('#name_register').val();
+                var email = $('#email_register').val();
+                var password = $('#password_register').val();
+                var area = $('#area_register').val();
+                var phone = $('#phone_register').val();
+                var token_register = '{{ csrf_token() }}';
+
+                $.ajax({
+                    url:'{{ route('register_ajax') }}',
+                    method:'POST',
+                    data : {_token:token_register,email:email,password:password,name:name,area:area,phone,phone},
+                    success : function (data) {
+                        if (data.errors != null) {
+                            $('.validate_register').children().remove();
+                            var errorString = '<ul>';
+                            $.each( data.errors, function( key, value) {
+                                errorString += '<li>' + value + '</li>';
+                            });
+                            errorString += '</ul>';
+                            $('.validate_register').removeAttr('hidden').append(errorString);
+
+                        }else{
+                            // alert('تم تسجيل طلبك بنجاح');
+                            Swal.fire({
+                                title: 'تم تسجيلك معنا بنجاح',
+                                type: 'success',
+                                showConfirmButton: false,
+                                timer:1500
+                            });
+                            setTimeout(function(){
+                                location.reload(true);
+                            }, 1000);
+
+                        }
+                    }
+                });
+            });
         </script>
     </body>
 </html>
