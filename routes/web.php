@@ -36,6 +36,8 @@ Route::group(['middleware'=>'auth'],function (){
     Route::get('payment','UserController@payment');
     Route::get('paymentstatus','UserController@paymentstatus');
     Route::get('payment/form/{id}','UserController@payment_form')->name('payment_form');
+    Route::post('choose_file', 'MyOrdersController@store');
+
 });
     Route::get('redirec/back',function (){
         return redirect()->back();

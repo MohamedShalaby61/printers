@@ -12,8 +12,8 @@ class ChooseFileController extends Controller
     public function store(Request $request)
     {
         
-        
-
+        //dd($request->all());
+        //dd($request->file);
         if($request->hasFile('file')){
         	$allowedfileExtension=['pdf','jpg','png','docx'];
 			$file = $request->file('file');
@@ -35,6 +35,8 @@ class ChooseFileController extends Controller
                     'my_order_id' => $request->my_order_id,
                     'file' => $fileURL,
                 ]);
+
+
 		        return response()->json(['url' => $fileURL ,'success' => 'Uploaded Successfully !'],200);
             }
 
@@ -43,7 +45,5 @@ class ChooseFileController extends Controller
 
     }
 
-
-    
     
 }

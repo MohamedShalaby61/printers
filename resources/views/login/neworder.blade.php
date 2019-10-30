@@ -84,13 +84,28 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div id="fileuploader">Upload</div>
+                <div class="form-group">
+                <h6 class="mb-10">اختر الملف</h6>
+                <p >الملفات التي نقبلها Pdf, Jpg, word </p>
+
+                <form method="post" action="{{ url('/choose_file') }}" enctype="multipart/form-data">
+                 @csrf
+                <input type="file" required="required" multiple="multiple" id="gallery-photo-add" name="file[]" />
+                <label for="gallery-photo-add" class="btn-2"><i class="fas fa-plus"></i></label>
+
+
+                <div class="gallery"></div>
+
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> اضف الطلب</button>
+                </form>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 
-      
+
 @push('js')
     <script src="{{ url('front/js/jquery.uploadfile.min.js') }}"></script>
   <script type="text/javascript">
@@ -111,7 +126,7 @@
                 url: "{{ url('/store_order') }}",
                 type:"post",
                 data: {  _token:_token22,
-                         service_type_id:serviceType22, 
+                         service_type_id:serviceType22,
                          order_type_id:orderType22,
                          font_type_id:fontType22,
                          font_size:fontSize22,
@@ -146,18 +161,25 @@
             });
 
         });
-            $(document).on('change','#file',function () {
-                var files = $(this)[0].files;
-                alert('لقد اخترت '+files.length + 'ملف ');
-            });
-            {{--var file = $('#file').val();--}}
-            {{--var my_order_id = $('#my_order_id').val();--}}
-            {{--$("#fileuploader").uploadFile({--}}
-                {{--url:"{{ url('/api/choose_file') }}",--}}
-                {{--method:"post",--}}
-                {{--data:{file:file,my_order_id:my_order_id},--}}
-                {{--fileName:"myfile"--}}
-            {{--});--}}
+                    //$('div.gallery').empty();
+                    // Multiple images preview in browser
+                    var imagesPreview = function(input, placeToInsertImagePreview) {
+                        if (input.files) {
+                            var filesAmount = input.files.length;
+                            for (i = 0; i < filesAmount; i++) {
+                                var reader = new FileReader();
+                                reader.onload = function(event) {
+                                    $($.parseHTML('<img width="50px;height:50px">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                                }
+                                reader.readAsDataURL(input.files[i]);
+                            }
+                        }
+                    };
+                    $('#gallery-photo-add').on('change', function() {
+                        $(' .gallery').empty();
+                        imagesPreview(this, 'div.gallery');
+                    });
+
 
   </script>
 @endpush

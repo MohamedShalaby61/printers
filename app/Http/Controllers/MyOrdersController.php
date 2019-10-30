@@ -19,7 +19,44 @@ use Validator;
 
 class MyOrdersController extends Controller
 {
- 
+
+    public function store(Request $request)
+    {
+        //dd($request->all());
+        if($request->file){
+        foreach ($request->file as $file){
+            $allowedfileExtension=['pdf','jpg','png','docx'];
+            // $filename = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $filename =pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename = md5($filename . time()) .'.' . $extension;
+
+            $check=in_array($extension,$allowedfileExtension);
+
+            if($check){
+                $path     = $file->move(public_path("/storage") , $filename);
+                $fileURL  = url('/storage/'. $filename);
+                $order = \App\MyOrders::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+                $order_id = $order->id;
+                $order = ChooseFile::create([
+                    'my_order_id' => $order_id,
+                    'file' => $fileURL,
+                ]);
+
+            }
+        }
+            $order = \App\MyOrders::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+            $files = ChooseFile::where('my_order_id',$order->id);
+        if ($files === null){
+            $order->delete();
+        }
+            return redirect()->back();
+
+
+        }
+
+    }
+
    public function store_order(Request $request){
    	
    	$data = Validator::make($request->all(),[
@@ -77,6 +114,35 @@ class MyOrdersController extends Controller
           $payment = payment::create([
               'order_id'=>$order->id
           ]);
+
+          if($request->hasFile('file')){
+              $allowedfileExtension=['pdf','jpg','png','docx'];
+              $file = $request->file('file');
+              // $filename = $file->getClientOriginalName();
+              $extension = $file->getClientOriginalExtension();
+              $filename =pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+              $filename = md5($filename . time()) .'.' . $extension;
+
+              $check=in_array($extension,$allowedfileExtension);
+
+              $fileURL = '';
+              if($check){
+                  $request->validate([
+                      'my_order_id' => 'required',
+
+                  ]);
+                  $path     = $file->move(public_path("/storage") , $filename);
+                  $fileURL  = url('/storage/'. $filename);
+                  $order = ChooseFile::create([
+                      'my_order_id' => $request->my_order_id,
+                      'file' => $fileURL,
+                  ]);
+                  return response()->json(['url' => $fileURL ,'success' => 'Uploaded Successfully !'],200);
+              }
+
+
+          }
+
 
           return response()->json(['errors' => null,'id'=>$order->id]);
       }
