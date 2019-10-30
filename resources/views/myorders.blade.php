@@ -187,6 +187,7 @@
                 </div>
             </div>
 
+
         <!-- end modal show -->
 @include('login.footer')
 <script class="src_btn" src=""></script>
@@ -200,7 +201,7 @@
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'حسنا احذفه ؟',
+                confirmButtonText: 'حذف',
                 cancelButtonText:'تراجع',
             }).then((result) => {
                 if (result.value) {
@@ -216,11 +217,11 @@
                                 title: 'تم الغاء طلبك بنجاح',
                                 type: 'success',
                                 showConfirmButton: false,
-                                timer: 1000
+                                timer: 2000
                             });
                             setTimeout(function(){
                                 location.reload(true);
-                            }, 1000);
+                            }, 2000);
                            
                         }
                     });
@@ -233,7 +234,7 @@
             e.preventDefault();
             Swal.fire({
                 title: 'عذرا',
-                text: 'يجب الدفع حتي تستطيع التحميل يبشه',
+                text: 'يجب الدفع حتي تستطيع التحميل',
                 imageUrl: 'https://dok7xy59qfw9h.cloudfront.net/85e/69864/c3bb/40a3/b0c5/49f86971ba7f/large/63320.jpg',
                 imageWidth: 400,
                 imageHeight: 200,
@@ -362,7 +363,7 @@
                             title: 'تم ارسال طلب التعديل بنجاح',
                             type: 'success',
                             showConfirmButton: false,
-                            timer: 1500
+                            timer: 2000
                         });
                     }
                 });

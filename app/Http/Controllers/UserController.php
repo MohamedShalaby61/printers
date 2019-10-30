@@ -40,11 +40,21 @@ class UserController extends Controller
     		$data['password'] = bcrypt($request->password);
     	}
 
+
+        if ($request->file){
+            $file = $request->file('file');
+            $destinationPath = 'storage/users';
+            $originalFile = $file->getClientOriginalName();
+            $filename = strtotime(date('Y-m-d-H:isa')).$originalFile;
+            $file->move($destinationPath, $filename);
+            $data['avatar'] = url('/storage/users/'. $filename);
+        }
+
     	$userData->update($data);
 
     	Session::flash('message', 'تم تحديث بياناتك بنجاح');
         Session::flash('alert-class', 'alert-success');
-    	return redirect()->back();
+    	return redirect('/editProfile#goodProfile');
 
     }
 

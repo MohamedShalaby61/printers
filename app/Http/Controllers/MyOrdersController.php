@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ChooseFile;
 use App\CompletedFile;
 use App\Notifications;
 use App\payment;
@@ -22,7 +23,6 @@ class MyOrdersController extends Controller
    public function store_order(Request $request){
    	
    	$data = Validator::make($request->all(),[
-         'file'            => 'required', 
          'service_type_id' => 'integer|required', 
          'order_type_id'   => 'integer|required', 
          'font_type_id'    => 'integer|required',
@@ -30,7 +30,7 @@ class MyOrdersController extends Controller
    	]);
 
       if($data->fails()){
-          return response()->json(['errors' => $data->errors()->getMessages()]);
+          return response()->json(['errors' => $data->errors()->getMessages(),'id'=>null]);
       }else{
 
           $setting = DB::table('setting')->first();
@@ -69,15 +69,16 @@ class MyOrdersController extends Controller
               $final->orderCount = $counter+1;
               $final->save();
 
-
           }
 
           $order = MyOrders::create($request->all()+['printer_id'=> $selectedPrinterId,'user_id'=> auth()->user()->id ]);
+
+
           $payment = payment::create([
               'order_id'=>$order->id
           ]);
 
-          return response()->json(['errors' => null]);
+          return response()->json(['errors' => null,'id'=>$order->id]);
       }
 
 

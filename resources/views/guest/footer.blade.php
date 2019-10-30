@@ -16,18 +16,12 @@
                             <ul>
                                 <li>
                                     <a href="#" class="hvr-icon-back">
-                                        طلباتي
-                                        <i class="fas fa-angle-left hvr-icon"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="hvr-icon-back">
                                         العروض
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="#how_print" class="hvr-icon-back">
                                         كيفية الطباع
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
@@ -41,7 +35,7 @@
                             <h5>الدعم</h5>
                             <ul>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="#home" class="hvr-icon-back">
                                         الرئيسية
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
@@ -53,13 +47,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="#services" class="hvr-icon-back">
                                         خدماتنا
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="#testmonials" class="hvr-icon-back">
                                         أراء العملاء
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
@@ -185,11 +179,11 @@
                                 title: 'تم تسجيلك معنا بنجاح',
                                 type: 'success',
                                 showConfirmButton: false,
-                                timer:1500
+                                timer:2000
                             });
                             setTimeout(function(){
                                 location.reload(true);
-                            }, 1000);
+                            }, 2000);
 
                         }
                     }

@@ -26,7 +26,7 @@
                   </div>
                   <div class=" form-group custom-control custom-checkbox">
                       <input class="custom-control-input" type="checkbox" name="rememberme" value="1" id="rememberme_login" {{ old('remember') ? 'checked' : '' }}>
-                      <label class="custom-control-label" for="customCheck1">تذكرني</label>
+                      <label class="custom-control-label" for="rememberme_login">تذكرني</label>
                   </div>
                   <button type="submit" id="button_login" class="btn btn-primary btn-block">تسجيل الدخول</button>
                 </form>

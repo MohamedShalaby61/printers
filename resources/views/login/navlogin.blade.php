@@ -1,6 +1,8 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-              <a class="navbar-brand" href="{{ url('/index') }}"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
+              @if(auth()->user()->avatar)
+                <a class="navbar-brand" href="{{ url('/index') }}"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
+              @endif
               <div class="" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
@@ -19,12 +21,12 @@
                        <div id="mySidenav" class="sidenav">
                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                            <div class="text-center profile">
-                                <img src="{{url('/front/imgs/128.jpg')}}" class="" alt="">
-                                <h6>معاذ محسن</h6>
-                                <a href="{{ url('/editProfile') }}" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
+                                <img src="{{ url('storage/'.auth()->user()->avatar) }}" class="" alt="">
+                                <h6>{{ auth()->user()->name }}</h6>
+                                <a href="{{ url('/editProfile#goodProfile') }}" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
                            </div>
                           <a href="{{ url('/index#home') }}">الرئيسية</a>
-                          <a href="{{ url('/index#about') }}">من نحن</a>
+                          {{--<a href="{{ url('/index#about') }}">من نحن</a>--}}
                           <a href="{{ url('/index#services') }}">خدماتنا</a>
                           <a href="{{ url('/index#how_print') }}">كيفية الطباعة</a>
                           <a href="{{ url('/index#testmonials') }}">أراء العملاء</a>

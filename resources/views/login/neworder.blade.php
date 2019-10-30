@@ -13,13 +13,14 @@
                     </div>
                     <form method="POST" action="{{ route('order.store') }}" enctype="multipart/form-data">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                        <div class="form-group">
-                            <h6 class="mb-10">اختر الملف</h6>
-                            <p >الملفات التي نقبلها Pdf, Jpg, word </p>
+                        {{--<div class="form-group">--}}
+                            {{--<h6 class="mb-10">اختر الملف</h6>--}}
+                            {{--<p>(بالضغط ctrl مع الاختيار تستطيع رفع اكثر من ملف )</p>--}}
+                            {{--<p >الملفات التي نقبلها Pdf, Jpg, word </p>--}}
 
-                            <input type="file" id="file" name="file" />
-                            <label for="file" class="btn-2"><i class="fas fa-plus"></i></label>
-                        </div>
+                            {{--<input type="file"  multiple="multiple" id="file" name="file" />--}}
+                            {{--<label for="file" class="btn-2"><i class="fas fa-plus"></i></label>--}}
+                        {{--</div>--}}
                         <div class="form-group">
                             <h6 class="mb-10">نوع الخدمة</h6>
                             <div class="custom-control custom-radio custom-control-inline">
@@ -65,7 +66,7 @@
                             <h6 class="mb-10">ملاحظات اضافة</h6>
                             <textarea class="btn-block" name="additional_details" required="required" value="{{old('additional_details')}}"></textarea>
                         </div>
-                        <button class="btn btn-primary btn-submit btn-block">ارسال الطلب</button>
+                        <button class="btn btn-primary btn-submit btn-block">تابع ارسال الطلب</button>
                     </form>                  
                   
               </div>
@@ -73,43 +74,50 @@
           </div>
         </div>
 
+<div class="modal" id="upload_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">اكمال رفع الطلب</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="fileuploader">Upload</div>
+            </div>
+        </div>
+    </div>
+</div>
 
       
 @push('js')
+    <script src="{{ url('front/js/jquery.uploadfile.min.js') }}"></script>
   <script type="text/javascript">
             $(".btn-submit").click(function(e){
             e.preventDefault();
 
 
-            var _token22              = $("input[name='_token']").val();
-            var file22              = $("input[name='file']").val();
+            var _token22            = $("input[name='_token']").val();
+            //var file22              = $("#file").get();
             var serviceType22       = $("input[name='service_type_id']").val();
             var orderType22         = $("input[name='order_type_id']").val();
             var fontType22          = $("select[name='font_type_id']").val();
             var fontSize22          = $("select[name='font_size_id']").val();
             var additionalDetails22 = $("textarea[name='additional_details']").val();
 
-            //alert(file22);
 
             $.ajax({
                 url: "{{ url('/store_order') }}",
                 type:"post",
-                data: {  _token:_token22, 
-                         file:file22,
-
+                data: {  _token:_token22,
                          service_type_id:serviceType22, 
                          order_type_id:orderType22,
                          font_type_id:fontType22,
                          font_size:fontSize22,
                          more_details:additionalDetails22,
-
                        },
                 success: function(data) {
-                  //  if($.isEmptyObject(data.error)){
-                  //      alert(data.success);
-                  //  }else{
-                  //      printErrorMsg(data.error);
-                  //  }
 
                   if (data.errors != null) {
                     $('.validate_class').children().remove();
@@ -119,31 +127,37 @@
                     });
                     errorString += '</ul>';
                       $('.validate_class').removeAttr('hidden').append(errorString);
-                  
-                    }else{
-                      // alert('تم تسجيل طلبك بنجاح');
-                      Swal.fire({
-                          title: 'تم ارسال طلبك بنجاح',
-                          type: 'success',
-                          showConfirmButton: false,
-                          timer:1000
-                      });
 
+                  }else{
                       $('#newPrint').modal('hide');
-
-                      setTimeout(function(){
-                          location.reload(true);
-                      }, 1000);
+                      $('#upload_modal').modal('show');
+                      // Swal.fire({
+                      //     title: 'تم ارسال طلبك بنجاح',
+                      //     type: 'success',
+                      //     showConfirmButton: false,
+                      //     timer:2000
+                      // });
 
                     }
-                  
 
                 }
 
-                  
+
             });
 
+        });
+            $(document).on('change','#file',function () {
+                var files = $(this)[0].files;
+                alert('لقد اخترت '+files.length + 'ملف ');
+            });
+            {{--var file = $('#file').val();--}}
+            {{--var my_order_id = $('#my_order_id').val();--}}
+            {{--$("#fileuploader").uploadFile({--}}
+                {{--url:"{{ url('/api/choose_file') }}",--}}
+                {{--method:"post",--}}
+                {{--data:{file:file,my_order_id:my_order_id},--}}
+                {{--fileName:"myfile"--}}
+            {{--});--}}
 
-        }); 
-        </script>
+  </script>
 @endpush

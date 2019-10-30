@@ -15,7 +15,7 @@
         
         
                     <!-- start control -->
-        <section class="edit-pro pd-norm-sec">
+        <section id="goodProfile" class="edit-pro pd-norm-sec">
             <div class="container">
                 <div class="row">
                   <div class="col-sm-3">
@@ -26,14 +26,21 @@
                     </div>
                   </div>
                   <div class="col-sm-9">
+                  @if(Session::has('message'))
+                      <p class="alert {{ Session::get('alert-class', 'alert-info') }}" style="font-size: 12px;">{{ Session::get('message') }}</p>
+                  @endif
                     <div class="tab-content content-profile" id="v-pills-tabContent">
                       <div class="tab-pane fade my-account show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                             <h5>حسابي</h5>
                             <div class="all-content">
                                 <div class="text-center profile">
-                                    <img src="{{url('/front/imgs/128.jpg')}}" id="blah" class="" alt="image">
+                                    @if(auth()->user()->avatar == 'users/default.png')
+                                    <img src="{{ url('storage/'.auth()->user()->avatar) }}" id="blah" class="" alt="image">
                                     <!-- <a href="#" class="edit-profile"></a> -->
-                                    <input type="file" id="file"/>
+                                    @else
+                                    <img src="{{ auth()->user()->avatar }}" id="blah" class="" alt="image">
+                                    @endif
+                                    <input type="file" name="file" id="file"/>
                                     <label for="file" class="btn-2"><i class="far fa-edit"></i> تعديل الصورة الشخصية</label>
                                </div>
                                @if ($errors->any())
@@ -46,9 +53,6 @@
                                     </div>
                                 @endif
 
-                                @if(Session::has('message'))
-                                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}" style="font-size: 12px;">{{ Session::get('message') }}</p>
-                                @endif
 
                                <form action="{{route('updateProfile')}}" method="POST">
                                 @csrf

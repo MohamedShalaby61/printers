@@ -1,6 +1,6 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-              <a class="navbar-brand" href="index.html"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
+              <a class="navbar-brand" href="###"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
               <div class="" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
@@ -19,7 +19,7 @@
                        <div id="mySidenav" class="sidenav">
                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                           <a href="#home">الرئيسية</a>
-                          <a href="#about">من نحن</a>
+                          {{--<a href="#about">من نحن</a>--}}
                           <a href="#services">خدماتنا</a>
                           <a href="#how_print">كيفية الطباعة</a>
                           <a href="#testmonials">أراء العملاء</a>
