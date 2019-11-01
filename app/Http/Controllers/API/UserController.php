@@ -292,7 +292,7 @@ public $successStatus = 200;
     }
 
     public function paymentstatus(Request $request){
-        $url = "https://oppwa.com/v1/checkouts/".$request->checkoutID."/payment";
+        $url = "https://test.oppwa.com/v1/checkouts/".$request->checkoutID."/payment";
         $url .= "?entityId=8ac7a4ca6da65700016db0c50a761d6c";
 
         $ch = curl_init();

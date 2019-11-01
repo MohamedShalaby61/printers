@@ -14,7 +14,11 @@
         <link rel="stylesheet" href="{{url('/front/css/animate.css')}}">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link href="{{url('/front/css/jquery.rateyo.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="{{url('/front/css/style.css')}}">
+        @if(App()->getLocale() == 'en')
+            <link rel="stylesheet" href="{{url('/front/css/style.css')}}">
+        @else
+            <link rel="stylesheet" href="{{url('/front/css/styleRTL.css')}}">
+        @endif
         <link rel="stylesheet" href="{{url('/front/css/hover-min.css')}}">
         <link rel="shortcut icon" href="{{url('/front/imgs/Logo.png')}}" type="image/ico" />
         <link rel="stylesheet" href="{{url('/front/css/uploadfile.css')}}" />

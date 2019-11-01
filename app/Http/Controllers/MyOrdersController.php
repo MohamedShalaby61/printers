@@ -7,6 +7,7 @@ use App\CompletedFile;
 use App\Notifications;
 use App\payment;
 use App\PrinterDetails;
+use App\UploadModifiedFiles;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\MyOrders;
@@ -47,23 +48,20 @@ class MyOrdersController extends Controller
         }
             $order = \App\MyOrders::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
             $files = ChooseFile::where('my_order_id',$order->id);
-        if ($files === null){
-            $order->delete();
-        }
-            return redirect()->back();
-
-
         }
 
     }
 
    public function store_order(Request $request){
-   	
+
+        //dd($request->all());
    	$data = Validator::make($request->all(),[
          'service_type_id' => 'integer|required', 
          'order_type_id'   => 'integer|required', 
          'font_type_id'    => 'integer|required',
-         'font_size'       => 'integer|required'
+         'font_size'       => 'integer|required',
+        'file'             => 'required',
+        'file.*'             => 'required|mimes:pdf,jpg,jpeg,docx|max:10000',
    	]);
 
       if($data->fails()){
@@ -114,36 +112,28 @@ class MyOrdersController extends Controller
           $payment = payment::create([
               'order_id'=>$order->id
           ]);
+          //dd($request->all());
+          if($request->file[0] !== null){
+              foreach ($request->file as $file){
+                  $allowedfileExtension=['pdf','jpg','png','docx'];
+                  // $filename = $file->getClientOriginalName();
+                  $extension = $file->getClientOriginalExtension();
+                  $filename =pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                  $filename = md5($filename . time()) .'.' . $extension;
 
-          if($request->hasFile('file')){
-              $allowedfileExtension=['pdf','jpg','png','docx'];
-              $file = $request->file('file');
-              // $filename = $file->getClientOriginalName();
-              $extension = $file->getClientOriginalExtension();
-              $filename =pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-              $filename = md5($filename . time()) .'.' . $extension;
+                  $check=in_array($extension,$allowedfileExtension);
 
-              $check=in_array($extension,$allowedfileExtension);
+                  if($check){
+                      $path     = $file->move(public_path("/storage") , $filename);
+                      $fileURL  = url('/storage/'. $filename);
+                      $good = ChooseFile::create([
+                          'my_order_id' => $order->id,
+                          'file' => $fileURL,
+                      ]);
 
-              $fileURL = '';
-              if($check){
-                  $request->validate([
-                      'my_order_id' => 'required',
-
-                  ]);
-                  $path     = $file->move(public_path("/storage") , $filename);
-                  $fileURL  = url('/storage/'. $filename);
-                  $order = ChooseFile::create([
-                      'my_order_id' => $request->my_order_id,
-                      'file' => $fileURL,
-                  ]);
-                  return response()->json(['url' => $fileURL ,'success' => 'Uploaded Successfully !'],200);
+                  }
               }
-
-
           }
-
-
           return response()->json(['errors' => null,'id'=>$order->id]);
       }
 
@@ -155,7 +145,7 @@ class MyOrdersController extends Controller
        $fonts = FontTypes::all();
        // start completed order variables
 
-       $completedOrders_id = [2,4,6,7,8,9];
+       $completedOrders_id = [2,4,7,9];
        $userid = auth()->user()->id;
        $completedOrders = MyOrders::whereIn('order_status_id', $completedOrders_id )->where('user_id', '=' , $userid)->with('font_type')->with('service_type')->with('order_type')->with('printer_details')->with('order_status')->orderBy('id','desc')->get();
        $completedPayment = [];
@@ -187,7 +177,7 @@ class MyOrdersController extends Controller
 
        // endcompleted order variables
 
-       $onProgressOrders_id = [1,3];
+       $onProgressOrders_id = [1,3,6,8];
        $userid = \auth()->user()->id;
        $onProgressOrders = MyOrders::whereIn('order_status_id' , $onProgressOrders_id )->where('user_id', '=' , $userid)->with('font_type')->with('service_type')->with('order_type')->with('printer_details')->with('order_status')->orderBy('id','desc')->get();
        foreach ($onProgressOrders as $onProgressOrder) {
@@ -272,16 +262,35 @@ class MyOrdersController extends Controller
 
     public function edit_order_front(Request $request)
     {
+        //dd($request->all());
         $orderid = $request->id;
         $updatenotes = $request->update_notes;
 
         $order = MyOrders::find($orderid);
 
+        $orderCount = $order->update_count + 1;
 
-        $orderCount = $order->order_count + 1;
+        if($request->file[0] !== null){
+            foreach ($request->file as $file){
+                $allowedfileExtension=['pdf','jpg','png','docx'];
+                // $filename = $file->getClientOriginalName();
+                $extension = $file->getClientOriginalExtension();
+                $filename =pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $filename = md5($filename . time()) .'.' . $extension;
 
+                $check=in_array($extension,$allowedfileExtension);
 
+                if($check){
+                    $path     = $file->move(public_path("/storage") , $filename);
+                    $fileURL  = url('/storage/'. $filename);
+                    $good = UploadModifiedFiles::create([
+                        'my_order_id' => $order->id,
+                        'file' => $fileURL,
+                    ]);
 
+                }
+            }
+        }
 
         if($orderCount >= 3){
             $order->update(['order_status_id' => '8' , 'update_count' =>$orderCount ,'update_notes'=> $updatenotes]);

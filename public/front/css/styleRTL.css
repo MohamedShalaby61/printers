@@ -20,9 +20,77 @@ body{
     padding: 0px;
     box-sizing: border-box;
     color: #000;
-    font-family: 'Droid Arabic Kufi', serif;
-    background-color:#f6f6f5;
+/*    overflow-y: hidden;*/
 }
+body .loading-overlay{
+    background: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    height: 100vh;
+    margin: auto;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+.custom-alert{
+   padding: 5px 10px;
+    display: none;
+    background: none;
+    font-size: 14px;
+    color: #f00;
+    margin-top: -15px;
+    border: none;
+}
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/*
+.logo-loading{
+    display: flex;
+    justify-content: center;
+}
+.logo-loading img{
+    width: 200px;
+    margin-top: 15px;
+}
+*/
 /* start style scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -197,7 +265,36 @@ textarea{
     width: 0;
 }
 /* end modal new print */
+/* start modal successful-order */
 
+.successful-order{
+    margin-top: 100px;
+}
+.successful-order .modal-content{
+    padding: 30px 20px;
+}
+.successful-order .modal-content i{
+    font-size: 50px;
+    color: #F16723;
+    margin-bottom: 10px;
+}
+.successful-order .modal-content p{
+     margin-bottom: 10px;
+    color: #999;
+    margin-top: 10px;
+}
+.successful-order .modal-content .qck-link{
+    margin-top: 25px;
+}
+.successful-order .modal-content a{
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.successful-order .modal-content .main{
+    color: #04124A;
+}
+/* start modal successful-order */
 
 /* start modal details order */
 
@@ -240,53 +337,28 @@ textarea{
 #details_order .card .editing{
     background: #FB0A0A;
 }
-.sec-order .complete-order .card .completes{
+#details_order .card .completes{
     background: #04124A;
 }
-.sec-order .complete-order .card .line{
+#details_order .card .line{
     border-bottom: 1px dashed #ccc;
     padding: 7px 0;
 }
-.sec-order .complete-order .card .status-payment{
-    font-size: 14px
+#details_order .card .status-payment{
+    font-size: 13px;
+    line-height: 30px
 }
-.sec-order .complete-order .card .status-payment a{
-    color: #333;
-    font-size: 12px;
+#details_order .card .cost button{
+    background: #757575;
+    border: none;
+    font-size: 14px;
 }
-.sec-order .complete-order .card .status-payment .cancel-order{
-    color: #FB0A0A;
-    border: 1px solid #FB0A0A;
-    padding: 5px 15px;
-    border-radius: 30px;
-}
-.sec-order .complete-order .card .status-payment a .true{
-    color: #4E9BD4;
-}
-.sec-order .complete-order .card .status-payment a .false{
-    color: #ccc;
-}
-.sec-order .complete-order .card .cost h5{
-    font-size: 18px;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-.sec-order .complete-order .card .true-pay{
-    background: none;
-    color: #4E9BD4;
-    border-radius: 30px;
-}
-.sec-order .complete-order .card .false-pay{
-    background: #4E9BD4;
-    border-radius: 30px;
-}
-
 
 /* end modal details orders  */
 
  /* start navbar */
 .navbar{
-    z-index: 999;
+    z-index: 555;
     position: absolute;
     width: 100%;
 }
@@ -769,7 +841,7 @@ h2{
 
 /* start service */
 .services {
-    background-image: url(../imgs/img-services2.jpg);
+    background-image: url(../imgs/sevices.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1008,7 +1080,7 @@ label.btn-2 i{
 }
 .testmonials .media .media-body .rating i{
     font-size: 10px;
-    color: #F5B94E;
+    color: #4E9BD4;
 }
 .testmonials .media .media-body .rating .def-star{
     color: #999;
@@ -1019,7 +1091,7 @@ label.btn-2 i{
 .end-footer{
     padding-top: 20px;
     padding-bottom: 10px;
-    background-image: url(../imgs/bg1.jpg);
+    background-image: url(../imgs/write-593333_960_720.jpg);
     color: #fff;
 }
 .end-footer .item a ,p{
@@ -1085,10 +1157,35 @@ label.btn-2 i{
 /* end footer */
 
 /*************************************************************************/
+.hide-sec{
+    display: none;
+}
+.missing i{
+    font-size: 65px;
+    color: #F16723;
+    margin-bottom: 30px;
+}
+.missing img{
+    width: 100px;
+    margin-bottom: 30px;
+}
+.missing p{
+    margin-top: 15px;
+    color: #999;
+    font-size: 16px !important;
+}
+.missing button{
+    margin-top: 10px;
+    background: #F16723;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 50px;
+}
 /* start page order */
 .nav-order{
     background: #020202;
     position: inherit;
+    
 }
 .bg-breadcrumb{
     background-color: #e9ecef;
@@ -1100,6 +1197,7 @@ label.btn-2 i{
 .breadcrumb {
     justify-content: center;
 }
+
 .sec-order .nav-tabs{
     border-bottom: none;
     display: flex;
@@ -1116,14 +1214,12 @@ label.btn-2 i{
     border-top-right-radius: .25rem;
     text-align: center;
     width: 160px;
-    font-size: 15px;
     border-top-left-radius: .25rem;
 }
 .sec-order .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     background: #4E9BD4;
     color: #fff;
      border-radius: 0px;
-    font-size: 15px;
 }
 .sec-order .complete-order .card{
     border: none;
@@ -1145,7 +1241,7 @@ label.btn-2 i{
      margin-right: 7px;
 }
 .sec-order .complete-order .card span a{
-    font-size: 10px;
+    font-size: 11px;
     margin-right: 5px;
     margin-top: -4px !important;
 }
@@ -1323,9 +1419,10 @@ label.btn-2 i{
 .sec-offers .all-items .card{
     position: relative;
     border: none;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
     border-radius: 7px;
     overflow: hidden;
+    margin-top: 15px;
 }
 .sec-offers .all-items .card .content-offer{
     padding: 20px 10px;
@@ -1386,3 +1483,46 @@ label.btn-2 i{
 }
 
 /* end offers */
+.operat-payment h3{
+    margin-bottom: 50px;
+}
+.operat-payment form{
+   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.12);
+    box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.12);
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    padding: 60px 5px;
+    border-radius: 7px;
+}
+.operat-payment .form-group{
+    display: flex;
+    margin: 0 70px;
+}
+.operat-payment form button{
+    margin-right: 5px;
+    
+}
+.operat-payment form .inp-promo{
+    
+    
+}
+.operat-payment form p{
+    font-size: 18px !important;
+}
+
+
+
+/* scroll Up */
+#scroll-top {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: fixed;
+    left: 15px;
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+    border-radius: 50px;
+}

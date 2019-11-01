@@ -35,8 +35,10 @@ Route::group(['middleware'=>'auth'],function (){
     Route::post('edit_order_front','MyOrdersController@edit_order_front')->name('edit_order_front');
     Route::get('payment','UserController@payment');
     Route::get('paymentstatus','UserController@paymentstatus');
-    Route::get('payment/form/{id}','UserController@payment_form')->name('payment_form');
+    Route::get('payment/form/{id}/{payment_id}','UserController@payment_form')->name('payment_form');
+    Route::get('payment/get/form/{id}','UserController@payment_form_view')->name('payment_form_view');
     Route::post('choose_file', 'MyOrdersController@store');
+    Route::post('checkCode','UserController@checkCode')->name('check_code_promo');
 
 });
     Route::get('redirec/back',function (){

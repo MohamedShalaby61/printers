@@ -14,7 +14,7 @@
         
         
                     <!-- start orders -->
-        <section class="sec-offers pd-norm-sec">
+        <section class="sec-offers pd-norm-sec" id="off_1">
             <div class="container">
                 <div class="all-items">
                     <h5 class="mb-30">عروض من اجلك</h5>

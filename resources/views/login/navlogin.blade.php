@@ -21,7 +21,11 @@
                        <div id="mySidenav" class="sidenav">
                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                            <div class="text-center profile">
-                                <img src="{{ url('storage/'.auth()->user()->avatar) }}" class="" alt="">
+                               @if(auth()->user()->avatar !== 'users/default.png')
+                                <img src="{{ auth()->user()->avatar }}" class="" alt="">
+                               @else
+                               <img src="{{ url('/storage/'.auth()->user()->avatar) }}" class="" alt="">
+                               @endif
                                 <h6>{{ auth()->user()->name }}</h6>
                                 <a href="{{ url('/editProfile#goodProfile') }}" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
                            </div>
@@ -30,8 +34,8 @@
                           <a href="{{ url('/index#services') }}">خدماتنا</a>
                           <a href="{{ url('/index#how_print') }}">كيفية الطباعة</a>
                           <a href="{{ url('/index#testmonials') }}">أراء العملاء</a>
-                          <a href="{{ route('order_user') }}">طلباتي</a>
-                          <a href="{{ route('offers_index') }}">العروض</a>
+                          <a href="{{ url('/myOrders#sec_1') }}">طلباتي</a>
+                          <a href="{{ url('/get/offers#off_1') }}">العروض</a>
                           <a href="{{ url('/index#contact') }}">تواصل معنا</a>
                           <a href="#" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">
                             انشاء طلب<i class="fas fa-print hvr-icon"></i>

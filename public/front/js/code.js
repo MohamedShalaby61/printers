@@ -1,4 +1,4 @@
-
+var wpwlOptions = {style:"card"}
 function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         $(".sidenav .nav-link").show();
