@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="newPrint" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -12,15 +13,18 @@
                       
                     </div>
                     <form method="POST" id="uploadForm" action="{{ route('order.store') }}" enctype="multipart/form-data">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+
                         <div class="form-group">
                             <h6 class="mb-10">اختر الملف</h6>
                             <p>(بالضغط ctrl مع الاختيار تستطيع رفع اكثر من ملف )</p>
                             <p >الملفات التي نقبلها Pdf, Jpg, word </p>
 
-                            <input type="file"  multiple="multiple" id="file" name="file[]" />
-                            <label for="file" class="btn-2"><i class="fas fa-plus"></i></label>
+                            <input type="file" id="file" multiple name="file" />
+                            {{--<label for="file" class="btn-2"><i class="fas fa-plus"></i></label>--}}
                         </div>
+
+
                         <div class="form-group">
                             <h6 class="mb-10">نوع الخدمة</h6>
                             <div class="custom-control custom-radio custom-control-inline">
@@ -74,104 +78,49 @@
           </div>
         </div>
 
+<link href="{{ url('dist/font/font-fileuploader.css') }}" media="all" rel="stylesheet">
+<link href="{{ url('dist/jquery.fileuploader.min.css') }}" media="all" rel="stylesheet">
+
 @push('js')
-    <script src="{{ url('front/js/jquery.uploadfile.min.js') }}"></script>
-  {{--<script type="text/javascript">--}}
-
-            {{--$(".btn-submit").click(function(e){--}}
-            {{--e.preventDefault();--}}
-
-
-            {{--var _token22            = $("input[name='_token']").val();--}}
-            {{--var file22              = $("#file").val();--}}
-            {{--var serviceType22       = $("input[name='service_type_id']").val();--}}
-            {{--var orderType22         = $("input[name='order_type_id']").val();--}}
-            {{--var fontType22          = $("select[name='font_type_id']").val();--}}
-            {{--var fontSize22          = $("select[name='font_size_id']").val();--}}
-            {{--var additionalDetails22 = $("textarea[name='additional_details']").val();--}}
-
-            {{--var formData = new FormData($(this).parents('form')[0]);--}}
-                {{--console.log(formData);--}}
-
-            {{--$.ajax({--}}
-                {{--url: "{{ url('/store_order') }}",--}}
-                {{--type:"post",--}}
-                {{--data: {  _token:_token22,--}}
-                         {{--service_type_id:serviceType22,--}}
-                         {{--order_type_id:orderType22,--}}
-                         {{--font_type_id:fontType22,--}}
-                         {{--font_size:fontSize22,--}}
-                         {{--more_details:additionalDetails22,--}}
-                       {{--},--}}
-                {{--success: function(data) {--}}
-
-                  {{--if (data.errors != null) {--}}
-                    {{--$('.validate_class').children().remove();--}}
-                    {{--var errorString = '<ul>';--}}
-                    {{--$.each( data.errors, function( key, value) {--}}
-                        {{--errorString += '<li>' + value + '</li>';--}}
-                    {{--});--}}
-                    {{--errorString += '</ul>';--}}
-                      {{--$('.validate_class').removeAttr('hidden').append(errorString);--}}
-
-                  {{--}else{--}}
-                      {{--$('#newPrint').modal('hide');--}}
-                      {{--$('#upload_modal').modal('show');--}}
-                      {{--Swal.fire({--}}
-                          {{--title: 'تم ارسال طلبك بنجاح',--}}
-                          {{--type: 'success',--}}
-                          {{--showConfirmButton: false,--}}
-                          {{--timer:2000--}}
-                      {{--});--}}
-
-                    {{--}--}}
-
-                {{--}--}}
-
-
-            {{--});--}}
-
-        {{--});--}}
-                    {{--//$('div.gallery').empty();--}}
-                    {{--// Multiple images preview in browser--}}
-
-
-
-  {{--</script>--}}
-
 
     <script type="text/javascript">
 
-        $(".btn-submit").click(function(){
+                $('input[name="file"]').fileuploader({
+                    addMore: true
+                });
+                $(".btn-submit").click(function(){
 
-            $('#uploadForm').ajaxForm({
-                target:'#imagesPreview',
-                dataType:'JSON',
-                success : function(res){
-                    if (res.errors != null) {
-                        $('.validate_class').children().remove();
-                        var errorString = '<ul>';
-                        $.each( res.errors, function( key, value) {
-                        errorString += '<li>' + value + '</li>';
-                        });
-                        errorString += '</ul>';
-                        $('.validate_class').removeAttr('hidden').append(errorString);
 
-                    }else{
-                        $('#newPrint').modal('hide');
-                        Swal.fire({
-                        title: 'تم ارسال طلبك بنجاح',
-                        type: 'success',
-                        showConfirmButton: false,
-                        timer:2000
-                        });
-                    }
-                },
+                    $('#uploadForm').ajaxForm({
+                        target:'#imagePreview',
+                        dataType : 'JSON',
+                        success : function(res){
+                            if (res.errors != null) {
+                                $('.validate_class').children().remove();
+                                var errorString = '<ul>';
+                                $.each( res.errors, function( key, value) {
+                                    errorString += '<li>' + value + '</li>';
+                                });
+                                errorString += '</ul>';
+                                $('.validate_class').removeAttr('hidden').append(errorString);
 
-            });
-            });
-        $('input[type=file]').on('change',function () {
-            alert('لقد اخترت'+$(this).get(0).files.length+'ملف للرفع');
-        });
+                            }else{
+                                $('#newPrint').modal('hide');
+                                Swal.fire({
+                                    title: 'تم ارسال طلبك بنجاح',
+                                    type: 'success',
+                                    showConfirmButton: false,
+                                    timer:2000
+                                });
+                                setTimeout(function(){
+                                    location.reload(true);
+                                }, 2000);
+                            }
+                        },
+
+                    });
+                });
+
     </script>
+
 @endpush

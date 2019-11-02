@@ -54,15 +54,16 @@ class MyOrdersController extends Controller
 
    public function store_order(Request $request){
 
-        //dd($request->all());
+       // dd($request->all());
    	$data = Validator::make($request->all(),[
          'service_type_id' => 'integer|required', 
          'order_type_id'   => 'integer|required', 
          'font_type_id'    => 'integer|required',
          'font_size'       => 'integer|required',
         'file'             => 'required',
-        'file.*'             => 'required|mimes:pdf,jpg,jpeg,docx|max:10000',
+        'file.*'             => 'required|mimes:pdf,jpg,jpeg,docx',
    	]);
+       //dd($request->all());
 
       if($data->fails()){
           return response()->json(['errors' => $data->errors()->getMessages(),'id'=>null]);
@@ -270,8 +271,8 @@ class MyOrdersController extends Controller
 
         $orderCount = $order->update_count + 1;
 
-        if($request->file[0] !== null){
-            foreach ($request->file as $file){
+        if($request->file2[0] !== null){
+            foreach ($request->file2 as $file){
                 $allowedfileExtension=['pdf','jpg','png','docx'];
                 // $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension();

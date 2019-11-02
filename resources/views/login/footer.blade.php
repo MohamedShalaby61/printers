@@ -93,9 +93,9 @@
         
                     <!-- end footer -->
 
-      
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="{{url('/front/js/jquery-3.3.1.min.js')}}" type="text/javascript"></script>   
+        <script src="{{url('/front/js/jquery-3.3.1.min.js')}}" type="text/javascript"></script>
         <script src="{{url('/front/js/popper.js')}}" type="text/javascript"></script>
         <script src="{{url('/front/js/bootstrap.min.js')}}" type="text/javascript"></script>
         <script src="{{url('/front/js/owl.carousel.min.js')}}" type="text/javascript"></script>
@@ -119,7 +119,12 @@
             
         </script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="{{ url('dist/jquery.fileuploader.min.js') }}" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 
-        @stack('js')
+@stack('js')
+
+
+
 </body>
 </html>

@@ -197,8 +197,8 @@
                                 <div class="form-group">
                                     <h6 class="mb-10">ارفع الملفات التي بها الخطأ</h6>
                                     <p>الملفات التي نقبلها Pdf, Jpg, word </p>
-                                    <input type="file" name="file[]" multiple id="file2">
-                                    <label for="file2" class="btn-2"><i class="fas fa-plus"></i></label>
+                                    <input type="file" name="file2" multiple id="file2">
+                                    {{--<label for="file2" class="btn-2"><i class="fas fa-plus"></i></label>--}}
                                 </div>
                                 <div class="form-group">
                                     <h6 class="mb-10">ملاحظات اضافة</h6>
@@ -218,6 +218,11 @@
 
         <!-- end modal show -->
 @include('login.footer')
+<script>
+    $('input[name="file2"]').fileuploader({
+        addMore: true
+    });
+</script>
 <script class="src_btn" src=""></script>
     <script>
         $('.deleteProgress').on('click',function (e) {

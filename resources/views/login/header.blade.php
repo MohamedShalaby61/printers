@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="{{url('/front/css/hover-min.css')}}">
         <link rel="shortcut icon" href="{{url('/front/imgs/Logo.png')}}" type="image/ico" />
         <link rel="stylesheet" href="{{url('/front/css/uploadfile.css')}}" />
+        @stack('css')
         <!--[if lt IE 9]>
         <script src="js/html5shiv.min.js"></sc  ript>
         <script src="js/respond.min.js"></script>
