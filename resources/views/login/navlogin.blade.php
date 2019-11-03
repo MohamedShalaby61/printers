@@ -22,7 +22,7 @@
                                     @foreach ($orders as $ord)
                                         @foreach ($notifications as $not)
                                             @if ($ord->id == $not->order_id)
-                                            <a class="dropdown-item" href="#">
+                                            <a class="dropdown-item" href="{{ url('/myOrders#sec_1') }}">
                                                 <div class="media">
                                                     <img src="{{ url('front/') }}/imgs/writting_icon.png" class="mr-3 bg-image" alt="...">
                                                     <div class="media-body">

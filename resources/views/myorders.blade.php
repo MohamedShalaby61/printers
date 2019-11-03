@@ -27,58 +27,29 @@
                             <i class="fas fa-bell"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <h6 class="mb-15 text-center">Notification</h6>
+                            <h6 class="mb-15 text-center">الاشعارات</h6>
                             <div class="mr-10px">
-                                <a class="dropdown-item active" href="#">
-                                    <div class="media">
-                                        <img src="imgs/writting_icon.png" class="mr-3 bg-image" alt="...">
-                                        <span><i class="far fa-clock clock"></i> hour ago</span>
-                                        <div class="media-body">
-                                            <p class="mt-0">Order number : 000000 - Writing</p>
-                                            <p>Order status : Received by printing press</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <div class="media">
-                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
-                                        <span><i class="far fa-clock clock"></i> hour ago</span>
-                                        <div class="media-body">
-                                            <p class="mt-0">Order number : 000000 - Writing</p>
-                                            <p>Order status : Received by printing press</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <div class="media">
-                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
-                                        <span><i class="far fa-clock clock"></i> hour ago</span>
-                                        <div class="media-body">
-                                            <p class="mt-0">Order number : 000000 - Writing</p>
-                                            <p>Order status : Received by printing press</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <div class="media">
-                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
-                                        <span><i class="far fa-clock clock"></i> hour ago</span>
-                                        <div class="media-body">
-                                            <p class="mt-0">Order number : 000000 - Writing</p>
-                                            <p>Order status : Received by printing press</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <div class="media">
-                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
-                                        <span><i class="far fa-clock clock"></i> hour ago</span>
-                                        <div class="media-body">
-                                            <p class="mt-0">Order number : 000000 - Writing</p>
-                                            <p>Order status : Received by printing press</p>
-                                        </div>
-                                    </div>
-                                </a>
+                                @php
+                                    $notifications = \App\Notifications::query()->where('user_id',auth()->user()->id)->get();
+                                    $orders = \App\MyOrders::query()->where('user_id',auth()->user()->id)->orderBy('id','desc')->get();
+
+                                @endphp
+
+                                @foreach ($orders as $ord)
+                                    @foreach ($notifications as $not)
+                                        @if ($ord->id == $not->order_id)
+                                            <a class="dropdown-item" href="{{ url('/myOrders#sec_1') }}">
+                                                <div class="media">
+                                                    <img src="{{ url('front/') }}/imgs/writting_icon.png" class="mr-3 bg-image" alt="...">
+                                                    <div class="media-body">
+                                                        <p class="mt-0">رقم الطلب : {{ $ord->id }} - {{ $ord->order_type->type }}</p>
+                                                        <p>حالة الطلب :  {{ $ord->order_status->status }}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        @endif
+                                    @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -147,10 +118,10 @@
             <div class="container">
                 <ul class="nav nav-tabs mb-15" id="myTab" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="home" aria-selected="true">طلبات  تحت التنفيذ</a>
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="home" aria-selected="true">{{ $onProgressOrders->count() }}طلب لم يكتمل </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#complete_order" role="tab" aria-controls="profile" aria-selected="false">مكتملة</a>
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#complete_order" role="tab" aria-controls="profile" aria-selected="false">مكتملة {{ $completedOrders->count() }}</a>
                   </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
@@ -384,7 +355,10 @@
                                 location.reload(true);
                             }, 2000);
                            
-                        }
+                        },
+                        beforeSend: function(){
+                            $('.sendEditReq').attr('disabled','disabled');
+                        },
                     });
 
                 }

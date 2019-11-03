@@ -70,7 +70,7 @@
                             <h6 class="mb-10">ملاحظات اضافة</h6>
                             <textarea class="btn-block" name="additional_details" value="{{old('additional_details')}}"></textarea>
                         </div>
-                        <button class="btn btn-primary btn-submit btn-block">اضف طلب</button>
+                        <button class="btn btn-primary btn_load btn-submit btn-block">اضف طلب</button>
                     </form>                  
                   
               </div>
@@ -104,6 +104,7 @@
                                 errorString += '</ul>';
                                 $('.validate_class').removeAttr('hidden').append(errorString);
 
+                                $('.btn_load').removeAttr('disabled');
                             }else{
                                 $('#newPrint').modal('hide');
                                 Swal.fire({
@@ -115,9 +116,12 @@
                                 setTimeout(function(){
                                     location.reload(true);
                                 }, 2000);
+
                             }
                         },
-
+                        beforeSend: function(){
+                            $('.btn_load').attr('disabled','disabled');
+                        },
                     });
                 });
 

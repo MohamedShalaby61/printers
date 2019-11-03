@@ -10,8 +10,8 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form action="##" class="paymentWidgets payment_state" data-brands="VISA MASTER AMEX"></form>
+            <div class="modal-body" style="direction: ltr">
+                <form action="##" style="direction: ltr" class="paymentWidgets payment_state" data-brands="VISA MASTER AMEX"></form>
             </div>
         </div>
     </div>
