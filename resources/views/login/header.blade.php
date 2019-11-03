@@ -5,7 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>اطبع لي</title>
-        <link rel="stylesheet" href="{{url('/front/css/bootstrap.minRTL.css')}}">
+        @if(App()->getLocale() == 'ar')
+            <link rel="stylesheet" href="{{url('/front/css/bootstrap.minRTL.css')}}">
+        @else
+            <link rel="stylesheet" href="{{url('/front/css/bootstrap.css')}}">
+        @endif
         <link rel="stylesheet" href="{{url('/front/css/font-awesome.min.css')}}">
         <link rel="stylesheet" href="{{url('/front/css/fontawesome.min.css')}}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">

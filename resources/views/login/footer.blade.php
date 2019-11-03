@@ -15,19 +15,19 @@
                             <h5>المنتجات</h5>
                             <ul>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="{{ url('/myOrders#sec_1') }}" class="hvr-icon-back">
                                         طلباتي
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="{{ url('/get/offers#off_1') }}" class="hvr-icon-back">
                                         العروض
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="{{ url('/index#how_print') }}" class="hvr-icon-back">
                                         كيفية الطباع
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
@@ -41,7 +41,7 @@
                             <h5>الدعم</h5>
                             <ul>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="{{ url('/index') }}" class="hvr-icon-back">
                                         الرئيسية
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
@@ -53,13 +53,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="{{ url('/index#services') }}" class="hvr-icon-back">
                                         خدماتنا
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="{{ url('/index#testmonials') }}" class="hvr-icon-back">
                                         أراء العملاء
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>

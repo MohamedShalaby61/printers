@@ -15,11 +15,18 @@ use App\FontTypes;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 use Modules\Offer\Entities\Offer;
 use Validator;
 
+
 class MyOrdersController extends Controller
 {
+    public function __construct()
+    {
+//        $notifications = Notifications::where('user_id',\auth()->user()->id)->get();
+//        View::share('notifications',$notifications);
+    }
 
     public function store(Request $request)
     {
@@ -250,7 +257,6 @@ class MyOrdersController extends Controller
     {
         $fonts = FontTypes::all();
         $offers = Offer::all();
-
         return view('offers',compact('fonts','offers'));
     }
 

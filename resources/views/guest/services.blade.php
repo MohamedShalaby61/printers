@@ -21,7 +21,7 @@
                           </div>
                           <div class="card-body">
                             <h5 class="card-title">تنسيق بحوث و رسائل</h5>
-                            <p class="card-text">نُعينك في كتابة كُتبك وأبحاثك ومستنداتك بجودة عالية وبأقل الأسعار.</p>
+                            <p class="card-text">تنسيق الأبحاث والرسائل فن نُجيده ونُتقنه .</p>
                           </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                             <i class="fas fa-print"></i>
                           </div>
                           <div class="card-body">
-                            <h5 class="card-title">إمكانية التحكم بالمطبوعات</h5>
+                            <h5 class="card-title">الملفات المطلوب كتابتها أو تنسيقها</h5>
                             <p class="card-text">يمكنك تحميل أكثر من ملف في وقت واحد باختلاف صيغ الملفات وأحجامها.</p>
                           </div>
                         </div>
@@ -53,7 +53,7 @@
                             <i class="fas fa-hand-holding-usd"></i>
                           </div>
                           <div class="card-body">
-                            <h5 class="card-title">أسعار في متناول الجميع</h5>
+                            <h5 class="card-title">نحن الأرخص سعراً فقط بريالين نكتب الورقة</h5>
                             <p class="card-text">تعتبر أسعارنا مناسبة وفي ذات الوقت منافسة. لذا حرصنا أن تكون أسعار خدماتنا هي الأقل.</p>
                           </div>
                         </div>

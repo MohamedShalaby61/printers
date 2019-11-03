@@ -2,8 +2,6 @@
 @include('login.neworder')
         <input type="hidden" id="_token_token" name="_token" value="{{ csrf_token() }}">
 
-                    <!-- END navbar -->
-@include('login.navlogin')
         <?php if(Session::has('message')){ ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
@@ -15,6 +13,136 @@
                 })
             </script>
         <?php } ?>
+
+<nav class="navbar navbar-expand-lg navbar-light nav-order">
+    <div class="container">
+        @if(auth()->user()->avatar)
+            <a class="navbar-brand" href="{{ url('/index') }}"><img src="{{url('/front/imgs/logo2.png')}}" alt="logo"></a>
+        @endif
+        <div class="" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <div class="btn-group dropdown">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <h6 class="mb-15 text-center">Notification</h6>
+                            <div class="mr-10px">
+                                <a class="dropdown-item active" href="#">
+                                    <div class="media">
+                                        <img src="imgs/writting_icon.png" class="mr-3 bg-image" alt="...">
+                                        <span><i class="far fa-clock clock"></i> hour ago</span>
+                                        <div class="media-body">
+                                            <p class="mt-0">Order number : 000000 - Writing</p>
+                                            <p>Order status : Received by printing press</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <div class="media">
+                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
+                                        <span><i class="far fa-clock clock"></i> hour ago</span>
+                                        <div class="media-body">
+                                            <p class="mt-0">Order number : 000000 - Writing</p>
+                                            <p>Order status : Received by printing press</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <div class="media">
+                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
+                                        <span><i class="far fa-clock clock"></i> hour ago</span>
+                                        <div class="media-body">
+                                            <p class="mt-0">Order number : 000000 - Writing</p>
+                                            <p>Order status : Received by printing press</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <div class="media">
+                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
+                                        <span><i class="far fa-clock clock"></i> hour ago</span>
+                                        <div class="media-body">
+                                            <p class="mt-0">Order number : 000000 - Writing</p>
+                                            <p>Order status : Received by printing press</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <div class="media">
+                                        <img src="imgs/writting_icon.png" class="mr-3" alt="...">
+                                        <span><i class="far fa-clock clock"></i> hour ago</span>
+                                        <div class="media-body">
+                                            <p class="mt-0">Order number : 000000 - Writing</p>
+                                            <p>Order status : Received by printing press</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a href="#" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">
+                        انشاء طلب<i class="fas fa-print hvr-icon"></i>
+                    </a>
+
+                </li>
+                <li class="nav-item active">
+                    <a href="{{ url('/logout') }}" class="nav-link btn btn-primary hvr-shutter-out-horizontal hvr-icon-pulse-grow">
+                        تسجيل الخروج<i class="fas fa-sign-in-alt hvr-icon"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="text-center profile">
+                            @if(auth()->user()->avatar !== 'users/default.png')
+                                <img src="{{ auth()->user()->avatar }}" class="" alt="">
+                            @else
+                                <img src="{{ url('/storage/'.auth()->user()->avatar) }}" class="" alt="">
+                            @endif
+                            <h6>{{ auth()->user()->name }}</h6>
+                            <a href="{{ url('/editProfile#goodProfile') }}" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
+                        </div>
+                        <a href="{{ url('/index#home') }}">الرئيسية</a>
+                        {{--<a href="{{ url('/index#about') }}">من نحن</a>--}}
+                        <a href="{{ url('/index#services') }}">خدماتنا</a>
+                        <a href="{{ url('/index#how_print') }}">كيفية الطباعة</a>
+                        <a href="{{ url('/index#testmonials') }}">أراء العملاء</a>
+                        <a href="{{ url('/myOrders#sec_1') }}">طلباتي</a>
+                        <a href="{{ url('/get/offers#off_1') }}">العروض</a>
+                        <a href="{{ url('/index#contact') }}">تواصل معنا</a>
+                        <a href="#" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">
+                            انشاء طلب<i class="fas fa-print hvr-icon"></i>
+                        </a>
+                        <!--
+                                                   <a href="#" class="nav-link btn chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-container="body" data-toggle="popover" data-placement="bottom" data-content="من فضلك قم بتسجيل الدخول اولا .">
+                                                    انشاء طلب<i class="fas fa-print hvr-icon"></i>
+                                                   </a>
+                        -->
+                        <a href="#" class="nav-link btn btn-primary hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#sign_in">
+                            تسجيل الدخول<i class="fas fa-sign-in-alt hvr-icon"></i>
+                        </a>
+                    </div>
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fas fa-bars menu trans-2s"></i></span>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END navbar -->
+<nav aria-label="breadcrumb" class="text-center bg-breadcrumb">
+    <h4>طلباتي</h4>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url('/index') }}" class="f-color">الرئيسية</a></li>
+        <li class="breadcrumb-item active" aria-current="page">طلباتي</li>
+    </ol>
+</nav>
         <section class="sec-order pd-norm-sec" id="sec_1">
             <div class="container">
                 <ul class="nav nav-tabs mb-15" id="myTab" role="tablist">
@@ -102,7 +230,7 @@
                                       <h6 class="bg-download">نوع الطلب :
                                           <span style="font-size: 12px;">{{ $order->order_status->status }}
                                               @if($order->payment->payment_status == 1)
-                                                  <a href="{{ $order->file }}" target="_blank" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
+                                                  <a href="{{ $order->file->url }}" target="_blank" class="hvr-icon-down"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
                                               @else
                                                   <a href="#" class="hvr-icon-down orderComplete"><i class="far fa-arrow-alt-circle-down hvr-icon"></i> تحميل الملف</a>
                                               @endif
@@ -266,18 +394,17 @@
         $('.orderComplete').on('click',function (e) {
             e.preventDefault();
             Swal.fire({
+                type:'info',
                 title: 'عذرا',
                 text: 'يجب الدفع حتي تستطيع التحميل',
-                imageUrl: 'https://dok7xy59qfw9h.cloudfront.net/85e/69864/c3bb/40a3/b0c5/49f86971ba7f/large/63320.jpg',
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: 'Custom image',
                 confirmButtonText: 'حسنا',
                 animation: false,
                 customClass: {
                     popup: 'animated tada'
                 }
             });
+
+
         });
 
         $('.editBtnComplete').on('click',function (e) {

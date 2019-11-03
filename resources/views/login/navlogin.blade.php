@@ -5,6 +5,39 @@
               @endif
               <div class="" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <div class="btn-group dropdown">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <h6 class="mb-15 text-center">الاشعارات</h6>
+                                <div class="mr-10px">
+                                    @php
+                                        $notifications = \App\Notifications::query()->where('user_id',auth()->user()->id)->get();
+                                        $orders = \App\MyOrders::query()->where('user_id',auth()->user()->id)->orderBy('id','desc')->get();
+
+                                    @endphp
+
+                                    @foreach ($orders as $ord)
+                                        @foreach ($notifications as $not)
+                                            @if ($ord->id == $not->order_id)
+                                            <a class="dropdown-item" href="#">
+                                                <div class="media">
+                                                    <img src="{{ url('front/') }}/imgs/writting_icon.png" class="mr-3 bg-image" alt="...">
+                                                    <div class="media-body">
+                                                        <p class="mt-0">رقم الطلب : {{ $ord->id }} - {{ $ord->order_type->type }}</p>
+                                                        <p>حالة الطلب :  {{ $ord->order_status->status }}</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                   <li class="nav-item active">
                        <a href="#" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">
           انشاء طلب<i class="fas fa-print hvr-icon"></i>
@@ -16,7 +49,7 @@
 					تسجيل الخروج<i class="fas fa-sign-in-alt hvr-icon"></i>
 				    </a>
                   </li>
-                  
+
                   <li class="nav-item active">
                        <div id="mySidenav" class="sidenav">
                           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -62,8 +95,8 @@
             <div class="overlay"></div>
             <div class="container">
                 <div class="content-head text-center">
-                    <h1 class="mb-30">اطبع لي | وجهتك المفضلة للطباعة الإلكترونية</h1>
-                    <p class="lead">منصة اطبع لي تقدم كافة خدمات الطباعة أونلاين بخطوات سهلة ، وأسعار منافسة وجودة عالية مع خدمة التوصيل السريع</p>
+                    <h1 class="mb-30">اطبع لي خيارك المفضل للكتابة والتنسق ، معها تحفظ وقتك وتوفر مالك</h1>
+                    <p class="lead">اطبع لي  منصة الكترونية للكتابة والتنسيق  بطريقة سهلة وجودة عالية وسعر لا يُنافس</p>
                 </div>
             </div>
         </div>

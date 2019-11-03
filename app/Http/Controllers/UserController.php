@@ -15,12 +15,14 @@ use App\Countries;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\View\View;
 use Modules\Offer\Entities\Offer;
 use Session;
 use AuthenticatesUsers;
 
 class UserController extends Controller
 {
+
     public function index(){
     	$fonts = FontTypes::all();
     	return view('indexlogin',compact('fonts'));
@@ -35,6 +37,7 @@ class UserController extends Controller
 
     public function updateProfile(Request $request)
     {
+        //dd($request->all());
     	$userData = \Auth()->user();
     	$data = $request->validate([
     		'name'         => 'required',
@@ -49,8 +52,8 @@ class UserController extends Controller
     	}
 
 
-        if ($request->file){
-            $file = $request->file('file');
+        if ($request->file55){
+            $file = $request->file('file55');
             $destinationPath = 'storage/users';
             $originalFile = $file->getClientOriginalName();
             $filename = strtotime(date('Y-m-d-H:isa')).$originalFile;
@@ -109,8 +112,8 @@ class UserController extends Controller
     {
         $order = MyOrders::find($id);
         $fonts = FontTypes::all();
-
-        return view('login.payment_form',compact('fonts','order'));
+        $notifications = Notifications::where('user_id',\auth()->user()->id)->get();
+        return view('login.payment_form',compact('fonts','order','notifications'));
     }
 
     public function payment(Request $request){
