@@ -297,7 +297,7 @@ textarea{
     height: 100vh;
 }
 .navbar-brand{
-    width: 110px;
+    width: 60px;
 }
 .navbar-brand img{
     width: 100%;
@@ -769,7 +769,7 @@ h2{
 
 /* start service */
 .services {
-    background-image: url(../imgs/img-services2.jpg);
+    background-image: url(../imgs/sevices.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -785,6 +785,7 @@ h2{
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    height: 250px;
 }
 .services .card:hover{
     box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
@@ -1019,14 +1020,14 @@ label.btn-2 i{
 .end-footer{
     padding-top: 20px;
     padding-bottom: 10px;
-    background-image: url(../imgs/bg1.jpg);
+    background-image: url(../imgs/write-593333_960_720.jpg);
     color: #fff;
 }
 .end-footer .item a ,p{
     font-size: 13px !important;
 }
 .end-footer .item img{
-    width: 110px
+    width: 90px
 }
 .end-footer .item h5 {
     margin-top: 35px

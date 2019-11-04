@@ -1,4 +1,13 @@
-var wpwlOptions = {style:"card"}
+$(window).on('load', function () {
+    
+    $(".loading-overlay .spinner").fadeOut(1500,function(){
+        $("body").css("overflow-y","auto");
+        $(".loading-overlay").fadeOut(1000);
+        
+    }); 
+});
+
+
 function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         $(".sidenav .nav-link").show();
@@ -26,28 +35,77 @@ function openNav() {
       readURL(this);
     });
 
+    // scroll up //
+    
+    $(function () {  
+      var scrollButton = $('#scroll-top');
+      $(window).scroll(function() {
+        $(this).scrollTop() >= 500 ? scrollButton.show() : scrollButton.hide();
+      });
+      scrollButton.click(function() {
+        $('html,body').animate({ 
+          scrollTop : 0 
+        });
+      });
+    });
+    
 
-//
-//    function add_file(){
-//      var new_chq_no = parseInt($('#total_chq').val())+1;
-////      var new_input="<input class='new_input input_style' type='text' id='new_"+new_chq_no+"'>";
+/// validation ////
+//$(function (){
+//   'use strict';
 //    
-//      var new_input="<div class='mt-5px custom-file'><input type='file' class='custom-file-input' id='new_"+new_chq_no+" customFile'><label class='custom-file-label' for=''customFile>Choose file</label></div>";
-//        
-//      $('#new_style').append(new_input);
-//      $('#total_chq').val(new_chq_no);
-//
+//        /// fuction Error
+//    var emailError = true,
+//        passError = true;
+//    
+//    function checkError(){
+//        if (emailError === true || passError === true ){
+//             console.log("Error");
+//        }else{
+//            console.log("NO Error");
+//        }
 //    }
-//
-//    function remove_file(){
-//      var last_chq_no = $('#total_chq').val();
-//      if(last_chq_no>1){
-//        $('#new_'+last_chq_no).remove();
-//        $('#total_chq').val(last_chq_no-1);
+//    
 //        
-//         
-//      }
-//    }
+//            //validate-email
+//    $(".email").blur(function(){
+//       if ($(this).val().length === 0) {
+//           
+////           $(this).css("border","1px solid #f00");
+//           $('#validate-email').fadeIn(200);
+//           
+//           emailError = true;
+//           
+//       } else{
+////           $(this).css("border","1px solid #0f0");
+//           $('#validate-email').fadeOut(200);
+//           
+//           emailError = false;
+//       }
+//        
+//        checkError();
+//    });
+//    
+//    
+//    $(".password").blur(function(){
+//       if ($(this).val().length === 0) {
+//           
+////           $(this).css("border","1px solid #f00");
+//           $('#validate-pass').fadeIn(200);
+//           
+//           passError = true;
+//           
+//       } else{
+////           $(this).css("border","1px solid #0f0");
+//           $('#validate-pass').fadeOut(200);
+//           
+//           passError = false;
+//       }
+//        checkError();
+//        
+//    });
+//});
+
 $(document).ready(function() {
     
      function openNav() {
@@ -74,6 +132,7 @@ $(document).ready(function() {
         $(".dropdown-menu").removeClass("show");
     });
     
+    
     $("#normal-btn").click(function(){
         $("#normal-btn").addClass("active");
         $("#quick-btn").removeClass("active");
@@ -83,6 +142,9 @@ $(document).ready(function() {
         $("#normal-btn").removeClass("active");
         $("#quick-btn").addClass("active");
     });
+    
+    
+    
     
     var owl = $(".cir-shop .owl-carousel");
     owl.owlCarousel({

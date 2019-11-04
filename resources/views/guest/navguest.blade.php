@@ -4,12 +4,12 @@
               <div class="" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
-                    <a href="#" class="nav-link btn btn-primary hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#sign_in">
+                    <a href="#" class="nav-link btn btn-primary hvr-icon-pulse-grow" data-toggle="modal" data-target="#sign_in">
           تسجيل الدخول<i class="fas fa-sign-in-alt hvr-icon"></i>
             </a>
                   </li>
                   <li class="nav-item active">
-                       <a href="#" class="nav-link btn chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-container="body" data-toggle="popover" data-placement="bottom" data-content="من فضلك قم بتسجيل الدخول اولا .">
+                       <a href="#" class="error_must_login nav-link btn chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-container="body" data-toggle="popover" data-placement="bottom">
 					انشاء طلب<i class="fas fa-print hvr-icon"></i>
 				    </a>
 
@@ -24,7 +24,7 @@
                           <a href="#how_print">كيفية الطباعة</a>
                           <a href="#testmonials">أراء العملاء</a>
                           <a href="#contact">تواصل معنا</a> 
-                           <a href="#" class="nav-link btn chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-container="body" data-toggle="popover" data-placement="bottom" data-content="من فضلك قم بتسجيل الدخول اولا .">
+                           <a href="#" class="error_must_login nav-link btn chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow">
                             انشاء طلب<i class="fas fa-print hvr-icon"></i>
                            </a>
 
@@ -44,7 +44,7 @@
             <div class="overlay"></div>
             <div class="container">
                 <div class="content-head text-center">
-                    <h1 class="mb-30">اطبع لي خيارك المفضل للكتابة والتنسق ، معها تحفظ وقتك وتوفر مالك</h1>
+                    <h1 class="mb-30">اطبع لي خيارك المفضل للكتابة والتنسيق ، معها تحفظ وقتك وتوفر مالك</h1>
                     <p class="lead">اطبع لي  منصة الكترونية للكتابة والتنسيق  بطريقة سهلة وجودة عالية وسعر لا يُنافس</p>
                 </div>
             </div>

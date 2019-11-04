@@ -118,10 +118,10 @@
             <div class="container">
                 <ul class="nav nav-tabs mb-15" id="myTab" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="home" aria-selected="true">{{ $onProgressOrders->count() }}طلب لم يكتمل </a>
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="home" aria-selected="true">طلب لم يكتمل <sup><b>{{ $onProgressOrders->count() }}</b></sup></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#complete_order" role="tab" aria-controls="profile" aria-selected="false">مكتملة {{ $completedOrders->count() }}</a>
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#complete_order" role="tab" aria-controls="profile" aria-selected="false">مكتملة <sup><b>{{ $completedOrders->count() }}</b></sup></a>
                   </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">

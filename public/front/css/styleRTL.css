@@ -857,6 +857,7 @@ h2{
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    height: 250px;
 }
 .services .card:hover{
     box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
@@ -1098,7 +1099,7 @@ label.btn-2 i{
     font-size: 13px !important;
 }
 .end-footer .item img{
-    width: 110px
+    width: 90px;
 }
 .end-footer .item h5 {
     margin-top: 35px
@@ -1220,6 +1221,15 @@ label.btn-2 i{
     background: #4E9BD4;
     color: #fff;
      border-radius: 0px;
+}
+.sec-order .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link sup {
+    background-color: rgb(255, 98, 80);
+    padding: 1px 4px;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    border-radius: 50%;
+    left: 6px;
 }
 .sec-order .complete-order .card{
     border: none;

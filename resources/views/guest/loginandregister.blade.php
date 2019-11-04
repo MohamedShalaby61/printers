@@ -1,5 +1,5 @@
 <div class="modal fade" id="sign_in" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header row">
               <ul class="nav nav-pills row" id="pills-tab" role="tablist">

@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="item">
-                            <h5>المنتجات</h5>
+                            <h5>الخدمات</h5>
                             <ul>
                                 <li>
                                     <a href="#" class="hvr-icon-back">
@@ -188,6 +188,21 @@
                         }
                     }
                 });
+            });
+
+            $(document).on('click','.error_must_login',function(e){
+                e.preventDefault();
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2500
+                });
+
+                Toast.fire({
+                    type: 'error',
+                    title: 'يجب تسجيل الدخول اولا'
+                })
             });
         </script>
     </body>

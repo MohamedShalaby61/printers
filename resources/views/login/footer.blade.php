@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="item">
-                            <h5>المنتجات</h5>
+                            <h5>الخدمات</h5>
                             <ul>
                                 <li>
                                     <a href="{{ url('/myOrders#sec_1') }}" class="hvr-icon-back">
