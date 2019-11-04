@@ -76,7 +76,6 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
             'phone' => 'required',
-            'area' => 'required',
         ]);
 
         $data['password'] = bcrypt($request->password);
@@ -93,7 +92,6 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
-            'area' => 'required',
             'phone' => 'required',
         ]);
 

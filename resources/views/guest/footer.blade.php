@@ -41,7 +41,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
+                                    <a href="{{ url('/index#about') }}" class="hvr-icon-back">
                                         من نحن
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
@@ -71,10 +71,10 @@
                                 <h6>اتصل بنا:</h6>
                                 <p>+00264453345</p>
                                 <ul class="social_agileinfo">
-                                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
+                                    {{--<li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>--}}
+                                    <li><a href="https://twitter.com/write4m" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                    {{--<li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>--}}
+                                    {{--<li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>--}}
                                 </ul>
                             </div>
                         </div>
@@ -155,14 +155,13 @@
                 var name = $('#name_register').val();
                 var email = $('#email_register').val();
                 var password = $('#password_register').val();
-                var area = $('#area_register').val();
                 var phone = $('#phone_register').val();
                 var token_register = '{{ csrf_token() }}';
 
                 $.ajax({
                     url:'{{ route('register_ajax') }}',
                     method:'POST',
-                    data : {_token:token_register,email:email,password:password,name:name,area:area,phone,phone},
+                    data : {_token:token_register,email:email,password:password,name:name,phone,phone},
                     success : function (data) {
                         if (data.errors != null) {
                             $('.validate_register').children().remove();

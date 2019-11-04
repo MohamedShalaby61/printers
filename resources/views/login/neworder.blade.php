@@ -20,7 +20,7 @@
                             <p>(بالضغط ctrl مع الاختيار تستطيع رفع اكثر من ملف )</p>
                             <p >الملفات التي نقبلها Pdf, Jpg, word </p>
 
-                            <input type="file" id="file" multiple name="file" />
+                            <input type="file" class="gallery" id="file" multiple name="file" />
                             {{--<label for="file" class="btn-2"><i class="fas fa-plus"></i></label>--}}
                         </div>
 
@@ -86,7 +86,9 @@
     <script type="text/javascript">
 
                 $('input[name="file"]').fileuploader({
-                    addMore: true
+                    addMore: true,
+                    limit: 5,
+                    theme: '.fileuploader-thumbnails-input-inner'
                 });
                 $(".btn-submit").click(function(){
 

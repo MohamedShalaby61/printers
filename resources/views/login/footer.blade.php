@@ -15,20 +15,19 @@
                             <h5>الخدمات</h5>
                             <ul>
                                 <li>
-                                    <a href="{{ url('/myOrders#sec_1') }}" class="hvr-icon-back">
-                                        طلباتي
+                                    <a href="{{ url('/index') }}" class="hvr-icon-back">
+                                        الرئيسية
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/get/offers#off_1') }}" class="hvr-icon-back">
-                                        العروض
+                                    <a href="{{ url('/index#about') }}" class="hvr-icon-back">من نحن
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/index#how_print') }}" class="hvr-icon-back">
-                                        كيفية الطباع
+                                        خطوات الطلب
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
@@ -41,26 +40,20 @@
                             <h5>الدعم</h5>
                             <ul>
                                 <li>
-                                    <a href="{{ url('/index') }}" class="hvr-icon-back">
-                                        الرئيسية
+                                    <a href="{{ url('/myOrders#sec_1') }}" class="hvr-icon-back">
+                                        طلباتي
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hvr-icon-back">
-                                        من نحن
+                                    <a href="{{ url('/get/offers#off_1') }}" class="hvr-icon-back">
+                                        العروض
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/index#services') }}" class="hvr-icon-back">
-                                        خدماتنا
-                                        <i class="fas fa-angle-left hvr-icon"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('/index#testmonials') }}" class="hvr-icon-back">
-                                        أراء العملاء
+                                    <a href="###" class="hvr-icon-back">
+                                        تواصل معنا
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
@@ -74,13 +67,15 @@
                                 
                                 <h6>موقعنا:</h6>
                                 <p>الحي الثاني في السالمية , دولة الكويت</p>
-                                <h6>اتصل بنا:</h6>
-                                <p>+00264453345</p>
+                                <h6>البريد الالكتروني</h6>
+                                <p></p>
+                                <h6>تواصل معنا</h6>
+                                <p>+966 55 875 6708</p>
                                 <ul class="social_agileinfo">
-                                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
+                                    {{--<li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>--}}
+                                    <li><a href="https://twitter.com/write4m" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                    {{--<li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>--}}
+                                    {{--<li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>--}}
                                 </ul>
                             </div>
                         </div>

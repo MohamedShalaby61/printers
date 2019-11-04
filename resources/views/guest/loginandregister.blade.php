@@ -51,9 +51,6 @@
                           <input type="password" class="form-control @error('password') is-invalid @enderror" id="password_register" placeholder="الرقم السري" name="password" value="{{ old('password') }}" required >
                       </div>
                       <div class="form-group">
-                          <input type="text" class="form-control @error('area') is-invalid @enderror" id="area_register" placeholder="المنطقة" name="area" value="{{ old('area') }}" required autocomplete="area">
-                      </div>
-                      <div class="form-group">
                           <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone_register" placeholder="رقم الجوال" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
                       </div>
                       <div class=" form-group custom-control custom-checkbox">
