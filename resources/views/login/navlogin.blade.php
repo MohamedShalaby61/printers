@@ -62,15 +62,18 @@
                                 <h6>{{ auth()->user()->name }}</h6>
                                 <a href="{{ url('/editProfile#goodProfile') }}" class="edit-profile"><i class="far fa-edit"></i> تعديل الملف الشخصي</a>
                            </div>
-                          <a href="{{ url('/index#home') }}">الرئيسية</a>
+                          <a href="{{ url('/index#home') }}"  onclick="closeNav()">الرئيسية</a>
                           {{--<a href="{{ url('/index#about') }}">من نحن</a>--}}
-                          <a href="{{ url('/index#services') }}">خدماتنا</a>
-                          <a href="{{ url('/index#how_print') }}">كيفية الطباعة</a>
-                          <a href="{{ url('/index#testmonials') }}">أراء العملاء</a>
-                          <a href="{{ url('/myOrders#sec_1') }}">طلباتي</a>
-                          <a href="{{ url('/get/offers#off_1') }}">العروض</a>
-                          <a href="{{ url('/index#contact') }}">تواصل معنا</a>
-                          <a href="#" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">
+                          <a href="{{ url('/index#services') }}"  onclick="closeNav()">خدماتنا</a>
+                          <a href="{{ url('/index#how_print') }}"  onclick="closeNav()">كيفية طلب الخدمة</a>
+                          <a href="{{ url('/index#testmonials') }}"  onclick="closeNav()">أراء العملاء</a>
+                          <a href="{{ url('/myOrders#sec_1') }}"  onclick="closeNav()">طلباتي</a>
+                          <a href="{{ url('/get/offers#off_1') }}"  onclick="closeNav()">العروض</a>
+                          <a href="{{ url('/index#contact') }}"  onclick="closeNav()">تواصل معنا</a>
+                           @if(auth()->user()->role_id == 1 || auth()->user()->role_id == 2 || auth()->user()->role_id == 3)
+                                <a href="{{ url('/get/login') }}">لوحة التحكم</a>
+                           @endif
+                          <a href="#"  onclick="closeNav()" class="nav-link btn btn-primary chg-color hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#newPrint">
                             انشاء طلب<i class="fas fa-print hvr-icon"></i>
                           </a>
 <!--
@@ -78,8 +81,8 @@
                             انشاء طلب<i class="fas fa-print hvr-icon"></i>
                            </a>
 -->
-                           <a href="#" class="nav-link btn btn-primary hvr-shutter-out-horizontal hvr-icon-pulse-grow" data-toggle="modal" data-target="#sign_in">
-                 تسجيل الدخول<i class="fas fa-sign-in-alt hvr-icon"></i>
+                           <a href="{{ url('logout') }}" class="nav-link btn btn-primary hvr-shutter-out-horizontal hvr-icon-pulse-grow">
+                 تسجيل الخروج<i class="fas fa-sign-in-alt hvr-icon"></i>
                   </a>
                         </div>
                         <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fas fa-bars menu trans-2s"></i></span>
@@ -95,8 +98,8 @@
             <div class="overlay"></div>
             <div class="container">
                 <div class="content-head text-center">
-                    <h1 class="mb-30">أطبع لي...منصتك الالكترونية للكتابة والتنسيق</h1>
-                    <p class="lead">بها تحفظ وقتك ومعها توفر مالك</p>
+                    <h1 class="mb-30"><span style="color: #4e9bd4;">اطبع لي</span> | منصتك الالكترونية للكتابة والتنسيق</h1>
+                    <p class="lead" style="font-size: 35px !important;">بها تحفظ <span style="color: #4e9bd4;">وقتك</span> ومعها توفر <span style="color:#4e9bd4">مالك</span>.</p>
                 </div>
             </div>
         </div>

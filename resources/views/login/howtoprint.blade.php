@@ -1,10 +1,10 @@
 <section class="how-print pd-norm-sec text-center" id="how_print">
             <div class="container">
-                <h2 class="mb-15">كيف اطبع؟</h2>
-                <p class="mb-30">يمكنك البدء بطباعة مستنداتك الآن في 4 خطوات فقط!</p>
+                <h2 class="mb-15">كيفية طلب خدمة الكتابة والتنسيق</h2>
+                {{--<p class="mb-30">يمكنك البدء بطباعة مستنداتك الآن في 4 خطوات فقط!</p>--}}
                 <div class="row">
                     <div class="step-line"></div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 mb-15">
+                    <div class="col-lg-4 col-md-6 col-xs-12 mb-15">
                         <div class="card">
                           <div class="icon-card text-center">
                             <i class="fas fa-file-upload"></i>
@@ -12,11 +12,11 @@
                           <div class="steps">1</div> 
                           <div class="card-body hvr-bubble-float-top">
                             <h5 class="card-title">ارفع المستند</h5>
-                            <p class="card-text">بعد تسجيل الدخول إلى حسابك، ورغبتك بإنشاء طلب جديد قم برفع الملف أو الملفات التي ترغب في كتابتها أو تنسيقها، مع تحديد حجم الخط ونوعه.</p>
+                            <p class="card-text">بعد تسجيل الدخول الي حسابك واختيار طلب جديد قم برفع الملف او الملفات التي ترغب في كتابتها او تنسيقها مع تحديد حجم الخط ونوعه</p>
                           </div>
                         </div>
                     </div>
-                     <div class="col-lg-3 col-md-6 col-xs-12 mb-15">
+                     <div class="col-lg-4 col-md-6 col-xs-12 mb-15">
                         <div class="card">
                           <div class="icon-card text-center">
                             <i class="fas fa-cogs"></i>
@@ -24,11 +24,11 @@
                             <div class="steps">2</div>        
                           <div class="card-body hvr-bubble-float-top">
                             <h5 class="card-title">حدد خيارات الطباعة</h5>
-                            <p class="card-text">بعد أن اكتمال عملية الكتابة والتنسيق ، اكمل عملية الدفع باستخدام مدى أو الفيزا أو ماستر كارد وقم بتنزيل الملف، علماً بأنه سيتم إرسال نسخة من الملف على بريدك  الإلكتروني عند إكمالك لعملية الدفع.</p>
+                            <p class="card-text">عند اكتمال كتابة وتنسيق طلبك وتحول حالته الي مكتمل اكمل عملية الدفع باستخدام مدي الفيزا او ماستر كارد</p>
                           </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 mb-15">
+                    <div class="col-lg-4 col-md-6 col-xs-12 mb-15">
                         <div class="card">
                           <div class="icon-card text-center">
                             <i class="fas fa-shopping-cart"></i>
@@ -36,19 +36,7 @@
                           <div class="steps">3</div> 
                           <div class="card-body hvr-bubble-float-top">
                             <h5 class="card-title">اختر طريقة الدفع</h5>
-                            <p class="card-text">باستخدام بطاقة الفيزا أو الماستر كارد أو شحن المحفظة عن طريق التحويل البنكي.</p>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-xs-12 mb-15">
-                        <div class="card">
-                          <div class="icon-card text-center">
-                              <i class="fas fa-file-powerpoint"></i>
-                          </div>
-                            <div class="steps">4</div> 
-                          <div class="card-body hvr-bubble-float-top">
-                            <h5 class="card-title">استلم مطبوعاتك</h5>
-                            <p class="card-text">استلمها بكل سهولة عن طريق نقاط الاستلام أو التوصيل السريع أو الشحن لمنطقتك.</p>
+                            <p class="card-text">قم بتنزيل الملف الذي سيكون بصيغة الوورد علما بأنه سيتم ارسال نسخة من الملف علي بريدك الالكتروني عند اكمالك لعملية الدفع</p>
                           </div>
                         </div>
                     </div>

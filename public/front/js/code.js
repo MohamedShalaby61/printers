@@ -123,8 +123,36 @@ $(document).ready(function() {
         var winH = $(window).height(),
             navH = $(".navbar").innerHeight();
         $(".carousel , .carousel-item").height(winH-navH);
-    })
-    
+    });
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+            $(".navbar").addClass("nav-scroll");
+//          $(".navbar").removeClass("nav-order");
+            $(".navbar-brand").css("width","60px");
+            $(".navbar").css("padding","0 1rem");
+        } else {
+            $(".navbar").removeClass("nav-scroll");
+//        $(".navbar").addClass("nav-order");
+            $(".navbar-brand").css("width","80px");
+        }
+    }
+    spans = document.querySelectorAll(".promo-code");
+    for (const p of spans) {
+        p.onclick = function() {
+            document.execCommand("copy");
+        }
+
+        p.addEventListener("copy", function(event) {
+            event.preventDefault();
+            if (event.clipboardData) {
+                event.clipboardData.setData("text/plain", p.textContent);
+                console.log(event.clipboardData.getData("text"))
+            }
+        });
+    }
     $("#hv-down , .dropdown-menu").mouseenter(function(){
         $(".dropdown-menu").addClass("show");
     });

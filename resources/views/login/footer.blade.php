@@ -5,9 +5,8 @@
                     <div class="col-sm">
                         <div class="item">
                             <img src="{{url('/front/imgs/logo2.png')}}" alt="logo">
-                            <p>مرحبا بكم في موقعنا . فقط في حالة وجودك هنا فنحن
-                                بدأنا النجاح ، يرجى الاستمرار والتخيل 
-                            </p>
+                            <p style="font-size: 17px !important;">اطبع لي .
+                            بها تحفظ وقتك ومعها توفر مالك</p>
                         </div>
                     </div>
                     <div class="col-sm">
@@ -27,7 +26,7 @@
                                 </li>
                                 <li>
                                     <a href="{{ url('/index#how_print') }}" class="hvr-icon-back">
-                                        خطوات الطلب
+                                        كيفية طلب الخدمة
                                         <i class="fas fa-angle-left hvr-icon"></i>
                                     </a>
                                 </li>
@@ -65,12 +64,12 @@
                             <h5>تواصل معنا</h5>
                             <div class="info-call">
                                 
-                                <h6>موقعنا:</h6>
-                                <p>الحي الثاني في السالمية , دولة الكويت</p>
+                                {{--<h6>موقعنا:</h6>--}}
+                                {{--<p>الحي الثاني في السالمية , دولة الكويت</p>--}}
                                 <h6>البريد الالكتروني</h6>
-                                <p></p>
+                                <p>info@write4m.com</p>
                                 <h6>تواصل معنا</h6>
-                                <p>+966 55 875 6708</p>
+                                <p>6708 875 55 966+</p>
                                 <ul class="social_agileinfo">
                                     {{--<li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>--}}
                                     <li><a href="https://twitter.com/write4m]" class="twitter"><i class="fab fa-twitter"></i></a></li>
@@ -118,7 +117,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 
 @stack('js')
-
 
 
 </body>

@@ -22,6 +22,9 @@ body{
     color: #000;
 /*    overflow-y: hidden;*/
 }
+.container{
+    max-width: 82%;
+}
 body .loading-overlay{
     background: #eee;
     position: absolute;
@@ -228,6 +231,7 @@ textarea{
     height: 120px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px rgba(204,204,204,.5);
+    padding: 7px;
 }
 /* end modal registration */
 
@@ -263,6 +267,31 @@ textarea{
     box-sizing: border-box;
     padding: 0;
     width: 0;
+    display: none;
+}
+.fileuploader{
+    background: none !important;
+}
+.fileuploader-input .fileuploader-input-caption{
+    display: none !important;
+}
+.fileuploader-input .fileuploader-input-button, .fileuploader-popup .fileuploader-popup-content .fileuploader-popup-button.button-success {
+    background: #fff !important;
+    box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    border-radius: 7px !important;
+    width: 80px;
+    height: 90px;
+    color: #333 !important;
+}
+.fileuploader-input-button span i{
+    background: #4e9bd4 !important;
+    color: #fff !important;
+    padding: 7px !important;
+    margin-top: 15px !important;
+    display: flex !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 5px !important;
 }
 /* end modal new print */
 /* start modal successful-order */
@@ -362,6 +391,11 @@ textarea{
     position: absolute;
     width: 100%;
 }
+.nav-scroll{
+    background: #333;
+    position: fixed;
+    opacity: 0.95;
+}
 .bg-head{
     background-image: url(../imgs/bannar3.jpg);
     background-size: cover;
@@ -369,7 +403,7 @@ textarea{
     height: 100vh;
 }
 .navbar-brand{
-    width: 60px;
+    width: 80px;
 }
 .navbar-brand img{
     width: 100%;
@@ -390,6 +424,15 @@ textarea{
     z-index: 50;
     padding-top: 26%;
     
+}
+.bg-head .content-head h1{
+    font-family: 'Cairo', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+.bg-head .lead{
+    font-size: 25px !important;
+    font-family: 'Cairo', sans-serif;
 }
 .nav-item .sidenav {
   height: 100%;
@@ -852,12 +895,12 @@ h2{
 .services .card{
     padding-top: 30px;
     border: none;
+    height: 250px;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    height: 250px;
 }
 .services .card:hover{
     box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
@@ -1099,7 +1142,7 @@ label.btn-2 i{
     font-size: 13px !important;
 }
 .end-footer .item img{
-    width: 90px;
+    width: 110px
 }
 .end-footer .item h5 {
     margin-top: 35px
@@ -1217,19 +1260,17 @@ label.btn-2 i{
     width: 160px;
     border-top-left-radius: .25rem;
 }
+.sec-order .nav-tabs .nav-link sup {
+    background-color: rgb(255, 98, 80);
+    padding: 1px 3px;
+    color: #fff;
+    border-radius: 7px;
+    left: 4px;
+}
 .sec-order .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     background: #4E9BD4;
     color: #fff;
      border-radius: 0px;
-}
-.sec-order .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link sup {
-    background-color: rgb(255, 98, 80);
-    padding: 1px 4px;
-    width: 20px;
-    height: 20px;
-    color: #fff;
-    border-radius: 50%;
-    left: 6px;
 }
 .sec-order .complete-order .card{
     border: none;
@@ -1354,6 +1395,8 @@ label.btn-2 i{
     height: 120px;
     border-radius: 50%;
     border: 3px solid #4E9BD4;
+    display: block;
+    margin: auto;
 }
 .edit-pro .content-profile .my-account .all-content .profile a{
     display: block;
@@ -1484,6 +1527,15 @@ label.btn-2 i{
     width: 50%;
     margin: auto;
     color: #fff;
+    cursor: copy;
+    background-color: #94C9F0;
+	border-bottom: 3px solid #94C9F0;
+	
+}
+.sec-offers .all-items .card .promo-code:active{
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
 }
 .sec-offers .all-items .card .time-offer{
     margin: 0;

@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="677542e5-64be-4150-b26c-b16f1308f7ee" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/front/imgs/bannar3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/imgs/bannar3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/front/imgs/bannar32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/css/styleRTL.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/styleRTL.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/imgs.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/js/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/js/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/editprofile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/editprofile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guest/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guest/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guest/howtoprint.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guest/howtoprint.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/guest/navguest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guest/navguest.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/guest/services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guest/services.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/indexguest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/indexguest.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/indexlogin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/indexlogin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/login/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/login/howtoprint.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login/howtoprint.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/login/navlogin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login/navlogin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/login/neworder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login/neworder.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/login/services.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login/services.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/myorders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myorders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/offers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,78 +47,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="howtoprint.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/guest/howtoprint.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="45" column="58" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="howtoprint.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/login/howtoprint.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="neworder.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/login/neworder.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navlogin.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/login/navlogin.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="99" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="navguest.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/guest/navguest.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/login/footer.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1404">
-              <caret line="74" column="77" selection-start-line="74" selection-start-column="77" selection-end-line="74" selection-end-column="77" />
+            <state relative-caret-position="234">
+              <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="50" selection-end-column="14" />
               <folding>
-                <element signature="n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#footer#0;n#!!top" />
-                <element signature="n#style#0;n#hr#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="indexlogin.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/indexlogin.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/login/services.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1716">
-              <caret line="66" column="63" lean-forward="true" selection-start-line="66" selection-start-column="63" selection-end-line="66" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -115,8 +64,32 @@
       <file leaf-file-name="services.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/guest/services.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1612">
-              <caret line="62" column="55" lean-forward="true" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
+            <state relative-caret-position="260">
+              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/login/footer.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/guest/footer.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,11 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>return view</find>
-      <find>notifi</find>
-      <find>في متنا</find>
-      <find>اطبع لي خيارك المفضل للكتابة والتنسق ، معها تحفظ وقتك وتوفر مالك</find>
-      <find>update</find>
       <find>update_notes</find>
       <find>sendEditReq</find>
       <find>مكتم</find>
@@ -143,7 +111,6 @@
       <find>item</find>
       <find>background</find>
       <find>end-footer</find>
-      <find>.bg-head</find>
       <find>services</find>
       <find>انشاء طلب</find>
       <find>area</find>
@@ -155,6 +122,12 @@
       <find>والتنسق</find>
       <find>twitter</find>
       <find>content-head</find>
+      <find>profile</find>
+      <find>.sec-order .nav-tabs .nav-link</find>
+      <find>.bg-head</find>
+      <find>login_user</find>
+      <find>تنسيق ال</find>
+      <find>newPrint</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,34 +144,35 @@
         <option value="$PROJECT_DIR$/resources/views/login/create_new_orders.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/ChooseFileController.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/validation.php" />
-        <option value="$PROJECT_DIR$/public/front/js/code.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$USER_HOME$/Downloads/print RTL/print RTL/orders.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MyOrdersController.php" />
         <option value="$PROJECT_DIR$/app/Notifications.php" />
-        <option value="$PROJECT_DIR$/resources/views/offers.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login/payment_form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/editprofile.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/indexlogin.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/indexguest.blade.php" />
         <option value="$PROJECT_DIR$/public/front/css/style.css" />
         <option value="$PROJECT_DIR$/resources/views/login/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/guest/header.blade.php" />
-        <option value="$PROJECT_DIR$/public/front/css/styleRTL.css" />
-        <option value="$PROJECT_DIR$/resources/views/myorders.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/guest/loginandregister.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/resources/views/login/neworder.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/offers.blade.php" />
+        <option value="$PROJECT_DIR$/public/front/js/code.js" />
+        <option value="$PROJECT_DIR$/resources/views/editprofile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/myorders.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/login/neworder.blade.php" />
+        <option value="$PROJECT_DIR$/public/front/css/styleRTL.css" />
+        <option value="$PROJECT_DIR$/Modules/User/Http/Middleware/LoginUser.php" />
+        <option value="$PROJECT_DIR$/resources/views/indexlogin.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/indexguest.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login/howtoprint.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/guest/howtoprint.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/guest/footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/login/footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/login/navlogin.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/guest/navguest.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login/services.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/guest/services.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/guest/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/login/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/guest/navguest.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/login/navlogin.blade.php" />
       </list>
     </option>
   </component>
@@ -381,9 +355,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="سثقرهؤث&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/services.blade.php&#10;services.blade&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/services.blade.php&#10;sty&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/styleRTL.css&#10;navg&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/navguest.blade.php&#10;footer&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/footer.blade.php&#10;بخخفثق&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/footer.blade.php&#10;اخصفخ&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/howtoprint.blade.php&#10;اخص&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/howtoprint.blade.php&#10;services&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/services.blade.php&#10;usercontroller&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/API/UserController.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/.env&#10;new&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/neworder.blade.php&#10;userco&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/UserController.php&#10;register&#9;null&#9;null&#10;ةغخ&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/myorders.blade.php&#10;header&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/header.blade.php&#10;header.&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/header.blade.php&#10;footer.blade&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/footer.blade.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/config/app.php&#10;style.css&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/style.css&#10;editProfile&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/editprofile.blade.php&#10;myorders&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/MyOrdersController.php&#10;styleR&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/styleRTL.css&#10;payment&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/payment_form.blade.php&#10;offers&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/offers.blade.php&#10;OrderController&#9;null&#9;null&#10;ىشر&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/navlogin.blade.php&#10;ىشرل&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/navguest.blade.php&#10;اخةث&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/home.blade.php&#10;MyOrder&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/MyOrders.php&#10;Notifi&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Notifications.php&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/User.php&#10;Notification&#9;null&#9;null&#10;navlog&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/navlogin.blade.php&#10;User.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/User.php&#10;he&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/header.blade.php&#10;neworder&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/neworder.blade.php&#10;tyle&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/styleRTL.css&#10;offers.blade.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/offers.blade.php&#10;web.&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/routes/web.php&#10;navlogin&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/navlogin.blade.php&#10;chp&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/API/ChooseFileController.php&#10;MyOrders&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/API/MyOrdersController.php&#10;MyOrdersc&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/MyOrdersController.php&#10;newor&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/neworder.blade.php&#10;myorder&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/myorders.blade.php&#10;usercontrolll&#9;null&#9;null&#10;UserController&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/UserController.php&#10;UserControll&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/API/UserController.php&#10;web.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/routes/web.php" />
+    <property name="SearchEverywhereHistoryKey" value="footer&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/footer.blade.php&#10;services&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/services.blade.php&#10;serv&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/services.blade.php&#10;ىشر&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/navlogin.blade.php&#10;بخخفثق&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/footer.blade.php&#10;navg&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/navguest.blade.php&#10;howto&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/howtoprint.blade.php&#10;index&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/indexguest.blade.php&#10;indexlogin&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/indexlogin.blade.php&#10;api.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/routes/api.php&#10;اخ&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/howtoprint.blade.php&#10;LoginUser&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/Modules/User/Http/Middleware/LoginUser.php&#10;kerne&#9;null&#9;null&#10;web.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/Modules/User/Routes/web.php&#10;ةغخ&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/myorders.blade.php&#10;profile&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/editprofile.blade.php&#10;navguest&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/navguest.blade.php&#10;style&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/styleRTL.css&#10;editP&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/editprofile.blade.php&#10;offers&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/offers.blade.php&#10;code&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/js/code.js&#10;سثقرهؤث&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/services.blade.php&#10;services.blade&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/services.blade.php&#10;sty&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/styleRTL.css&#10;اخصفخ&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/howtoprint.blade.php&#10;اخص&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/howtoprint.blade.php&#10;usercontroller&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/API/UserController.php&#10;.env&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/.env&#10;new&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/neworder.blade.php&#10;userco&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/UserController.php&#10;register&#9;null&#9;null&#10;header&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/header.blade.php&#10;header.&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/header.blade.php&#10;footer.blade&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/footer.blade.php&#10;app.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/config/app.php&#10;style.css&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/style.css&#10;editProfile&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/editprofile.blade.php&#10;myorders&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Http/Controllers/MyOrdersController.php&#10;styleR&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/public/front/css/styleRTL.css&#10;payment&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/payment_form.blade.php&#10;OrderController&#9;null&#9;null&#10;ىشرل&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/guest/navguest.blade.php&#10;اخةث&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/home.blade.php&#10;MyOrder&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/MyOrders.php&#10;Notifi&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/Notifications.php&#10;User&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/User.php&#10;Notification&#9;null&#9;null&#10;navlog&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/navlogin.blade.php&#10;User.php&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/app/User.php&#10;he&#9;FILE&#9;file://C:/xampp/htdocs/printers_new/resources/views/login/header.blade.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../well-known" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -427,18 +401,18 @@
       <workItem from="1572620944416" duration="932000" />
       <workItem from="1572638264499" duration="591000" />
       <workItem from="1572704048256" duration="27717000" />
-      <workItem from="1572779527175" duration="27691000" />
+      <workItem from="1572779527175" duration="41525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161755000" />
+    <option name="totallyTimeSpent" value="175589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1954612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11346999" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -471,43 +445,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/MyOrdersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/ChooseFileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/UploadModifiedFiles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/front/css/styles.imageuploader.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/front/js/jquery.imageuploader.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/front/js/jquery.multifile.preview.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/dist/js/uploadHBR.min.js" />
     <entry file="file://$PROJECT_DIR$/public/dist/js/fileinput.js" />
     <entry file="file://$PROJECT_DIR$/public/dist/css/fileinput.css" />
@@ -593,16 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/offers.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding>
-            <element signature="e#426#2494#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/login/payment_form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -624,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/editprofile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/login/testimonials.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1716" />
@@ -645,13 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="291" column="1" lean-forward="true" selection-start-line="291" selection-start-column="1" selection-end-line="291" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/myorders.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="123" column="197" selection-start-line="123" selection-start-column="197" selection-end-line="123" selection-end-column="197" />
         </state>
       </provider>
     </entry>
@@ -700,56 +613,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/indexguest.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/front/js/code.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#1016#1093#0#HTML" expanded="true" />
-            <element signature="e#1409#1488#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/guest/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="74" column="76" selection-start-line="74" selection-start-column="76" selection-end-line="74" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/guest/howtoprint.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="45" column="58" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/login/neworder.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/login/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="74" column="77" selection-start-line="74" selection-start-column="77" selection-end-line="74" selection-end-column="77" />
-          <folding>
-            <element signature="n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#footer#0;n#!!top" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/login/howtoprint.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <caret line="147" column="52" lean-forward="true" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -760,45 +627,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/login/navlogin.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/offers.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="99" selection-end-column="22" />
+        <state relative-caret-position="286">
+          <caret line="102" column="14" lean-forward="true" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
+          <folding>
+            <element signature="e#52#5850#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/guest/navguest.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/editprofile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        <state relative-caret-position="234">
+          <caret line="109" column="40" lean-forward="true" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="40" />
+          <folding>
+            <element signature="e#52#5850#0#HTML" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/front/css/styleRTL.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="385" column="22" selection-start-line="385" selection-start-column="10" selection-end-line="385" selection-end-column="22" />
+        <state relative-caret-position="264">
+          <caret line="232" column="50" lean-forward="true" selection-start-line="232" selection-start-column="50" selection-end-line="232" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Common/Routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/User/Http/Middleware/LoginUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/User/Routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/login/howtoprint.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/guest/howtoprint.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/indexlogin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        <state relative-caret-position="26">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/guest/services.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/myorders.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1612">
-          <caret line="62" column="55" lean-forward="true" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
+        <state relative-caret-position="5063">
+          <caret line="269" column="77" lean-forward="true" selection-start-line="269" selection-start-column="77" selection-end-line="269" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/indexguest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="124" selection-start-line="9" selection-start-column="124" selection-end-line="9" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/login/neworder.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/login/services.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="66" column="63" lean-forward="true" selection-start-line="66" selection-start-column="63" selection-end-line="66" selection-end-column="63" />
+        <state relative-caret-position="52">
+          <caret line="2" column="45" lean-forward="true" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/guest/services.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/guest/navguest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="42" column="6" lean-forward="true" selection-start-line="42" selection-start-column="6" selection-end-line="50" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/login/navlogin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="104" column="14" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/guest/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/login/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

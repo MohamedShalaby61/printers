@@ -15,7 +15,7 @@
                     <form method="POST" id="uploadForm" action="{{ route('order.store') }}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
-                        <div class="form-group">
+                        <div class="form-group delete_noty">
                             <h6 class="mb-10">اختر الملف</h6>
                             <p>(بالضغط ctrl مع الاختيار تستطيع رفع اكثر من ملف )</p>
                             <p >الملفات التي نقبلها Pdf, Jpg, word </p>
@@ -70,7 +70,7 @@
                             <h6 class="mb-10">ملاحظات اضافة</h6>
                             <textarea class="btn-block" name="additional_details" value="{{old('additional_details')}}"></textarea>
                         </div>
-                        <button class="btn btn-primary btn_load btn-submit btn-block">اضف طلب</button>
+                        <button class="btn btn-primary btn_load btn-submit btn-block">ارسل الطلب</button>
                     </form>                  
                   
               </div>
@@ -87,8 +87,7 @@
 
                 $('input[name="file"]').fileuploader({
                     addMore: true,
-                    limit: 5,
-                    theme: '.fileuploader-thumbnails-input-inner'
+                    limit: 5
                 });
                 $(".btn-submit").click(function(){
 
@@ -126,6 +125,18 @@
                         },
                     });
                 });
+
+                $('.fileuploader-input-button span').html('<i class="fa fa-plus"></i>');
+
+                // $('.delete_noty').html($('<div>').append($('*', '.delete_noty')).html());
+                var div=$(".delete_noty")[0];
+                if(div.childNodes.length)
+                    // alert(div.childNodes.length);
+                    for(var i=0;i<div.childNodes.length;i++)
+                    {
+                        if(div.childNodes[i].nodeType===3)
+                            div.removeChild(div.childNodes[i]);
+                    }
 
     </script>
 

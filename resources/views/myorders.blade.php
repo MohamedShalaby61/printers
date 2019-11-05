@@ -267,7 +267,14 @@
                           @endforeach
                       </div>
                             @else
-                                <h2>لا يوجد لديك طلبات مكتملة</h2>
+                                <div class="missing text-center pd-norm-sec">
+                                    <div class="container">
+                                        <i class="far fa-file-excel"></i>
+                                        <h5>لا توجد طلبات مكتملة</h5>
+                                        <p>قم بأنشاء طلبات جديدة لتسمتع بخدمتنا</p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPrint">انشاء طلب</button>
+                                    </div>
+                                </div>
                             @endif
                         </div>
                 </div>

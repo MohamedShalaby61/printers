@@ -122,7 +122,7 @@
                                     <h6 class="mb-15">{{ $offer->content }}</h6>
                                     <p>انسخ  ال "برومو كود" المرفق ادناه اثناء الدفع
                                         للاشتراك بالعرض</p>
-                                    <p class="promo-code">{{ $offer->code }}</p>
+                                    <p class="promo-code" data-toggle="tooltip" data-placement="top" title="Copy to clipboard" >{{ $offer->code }}</p>
                                 </div>
                                 <p class="time-offer">مدة العرض  : من {{ $offer->started_at }} الى  {{ $offer->ended_at }} </p>
                             </div>
